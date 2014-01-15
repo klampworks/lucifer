@@ -7,6 +7,10 @@
 .section .data
 data_items:
 .long 3,67,34,222,45,75,54,34,44,33,22,11,66,0
+data_items2:
+.long 3,67,34,222,45,75,54,34,44,33,22,11,66,0
+data_items3:
+.long 3,67,34,223,45,75,54,34,44,33,22,11,66,0
 
 .section .text
 
@@ -15,6 +19,15 @@ _start:
 
 pushl $data_items
 call maximum
+subl $4, %esp
+
+pushl $data_items2
+call maximum
+subl $4, %esp
+
+pushl $data_items3
+call maximum
+subl $4, %esp
 
 #%ebx holds the status code for exit, it already contains the largest number.
 movl $1, %eax

@@ -50,18 +50,35 @@ int main() {
 		}
 		*/
 
-/*
-		for (auto &row : grid) {
 
-			for (int i = N - 2; i >= 0; i--) {
-				if (row[i] != '.') { 
-					
-					row[i+1] = row[i];
-					row[i] = '.';
+		for (int row = N -1; row > 0; row--) {
+			for (int col = 0; col < N; col++) {
+
+				if (grid[row][col] == '.') {
+					grid[row][col] = grid[row-1][col];
+					grid[row-1][col] = '.';
+
+				}
+				//std::cout << (char)grid[row][col];
+			}
+			//std::cout << std::endl;
+
+		}
+		std::cout << std::endl;
+/*
+		//for (int i = N - 1; i >= 0; i--) {
+		for (int i = 0; i < N; i++) {
+			for (int j = N - 1; j > 0; j--) {
+				if (grid[j][i] == '.') { 
+				std::cout << "k";	
+					grid[j][i] = grid[j][i-1];
+					grid[j][i-1] = '.';
 				}
 			}
+			std::cout << std::endl;
 		}
 		*/
+		
 
 		//for (unsigned i = 0; i < N; i++) {
 		for (int i = N - 1; i >= 0; i--) {

@@ -61,8 +61,16 @@ int main() {
 		std::sort(v2.begin(), v2.end(), [](int a, int b){ return a < b;});
 		
 		long long total = 0;
+		long long former = 0;
 		for (int i = 0; i < n; i++) {
 			total += v1[i] * v2[i];
+			
+			if (total > 0)
+				assert(total > former);
+			else
+				assert(total < former);
+
+			former = total;
 		}
 
 		std::cout << "Case #" << counter << ": " << total << std::endl;

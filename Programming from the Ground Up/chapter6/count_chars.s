@@ -10,11 +10,11 @@ movl 8(%ebp), %edx
 
 count_loop_begin:
 	movb (%edx), %al
-	cmpb, $0, %al
+	cmpb $0, %al
 	je count_loop_end
 
-	incl %ecx,
-	incl %edx,
+	incl %ecx
+	incl %edx
 	jmp count_loop_begin
 
 cound_loop_end:

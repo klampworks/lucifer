@@ -17,7 +17,7 @@ count_loop_begin:
 	incl %edx
 	jmp count_loop_begin
 
-cound_loop_end:
+count_loop_end:
 	movl %ecx, %eax
 	popl %ebp
 	ret

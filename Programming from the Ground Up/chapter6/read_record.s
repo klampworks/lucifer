@@ -40,7 +40,7 @@ record_read_loop:
 	movl %eax, %edx
 	movl -8(%ebp), %ebx
 	movl $4, %eax
-	movl $RECORD_FIRSTMA,E + record_buffer, %ecx
+	movl $RECORD_FIRSTNAME + record_buffer, %ecx
 	int $0x80
 
 	pushl -8(%ebp)

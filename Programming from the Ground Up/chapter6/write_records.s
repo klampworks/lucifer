@@ -5,11 +5,11 @@
 
 record1:
 .ascii "Fredrick\0"
-.rept 32 #Padding
+.rept 31 #Padding
 .byte 0
 .endr
 .ascii "Bartlett\0"
-.rept 32
+.rept 31
 .byte 0
 .endr
 .ascii "4242 A Prairie\nTulsa, OK 55555\0"

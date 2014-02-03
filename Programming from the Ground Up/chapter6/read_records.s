@@ -45,7 +45,7 @@ record_read_loop:
 
 	pushl -8(%ebp)
 	call write_newline
-	addl $4, %ebp
+#	addl $4, %ebp
 
 	jmp record_read_loop
 

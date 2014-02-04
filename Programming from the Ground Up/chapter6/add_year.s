@@ -15,7 +15,7 @@ output_file_name:
 .globl _start
 
 _start:
-	movl %esp, ebp
+	movl %esp, %ebp
 	subl $8, %esp
 
 	movl $5, %eax

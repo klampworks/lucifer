@@ -3,4 +3,7 @@
 .equ RECORD_ADDRESS, 80
 .equ RECORD_AGE, 320
 
+#New fields
+#.equ RECORD_NEW, 324
+#.equ RECORD_SIZE, 328
 .equ RECORD_SIZE, 324

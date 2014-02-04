@@ -14,3 +14,12 @@
 1.1-5
 	The traveling salesman is an example of a problem where an approximatley best solution is sufficiant. Cryptography is an example of a problem where the ebst solution is required.
 
+1.2-1
+	Network routers run software which requires algorithmic content to decide where to send a given packet based on factors such as connection speeds, traffic congestion and the ultimate destination of the packet.
+
+1.2-2
+	< 64	
+
+1.2-3
+	15
+

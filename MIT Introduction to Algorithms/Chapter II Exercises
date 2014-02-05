@@ -124,4 +124,10 @@ being searched for is equally likely to be any element in the array.
 
 O(n) for bpth cases because we do not concern ourselves with constants in O-notation.
 
+(n) for bpth cases because we do not concern ourselves with constants in O-notation.(n) for bpth cases because we do not concern ourselves with constants in O-notation.
 
+2.3-1
+       |03 09 26 38 41 49 52 57|
+  |03 26 41 52|        |09 38 49 57|
+ |03 41|   |26 52|   |38 57|   |09 49|
+|03| |41| |52| |26| |38| |57| |09| |49|

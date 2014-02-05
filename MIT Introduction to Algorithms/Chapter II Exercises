@@ -98,6 +98,8 @@ and each array as a whole represents a binary number of n bits.
 Output: An n + 1 element array C representing th sum of A + B
 
 
+2.2-1
+O(n^3)
 
 
 

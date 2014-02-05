@@ -23,5 +23,34 @@ record:
 .section .text
 .globl _start
 
-start:
+_start:
+movl %esp, %ebp
+subl $4, %esp
 
+#Open the output file.
+movl $5, %eax
+movl $file_name, %ebx
+movl $0101, %ecx
+movl $0666, %edx
+int $0x80
+
+#Store the file descriptor
+movl %eax, -4(%ebp)
+
+movl $30, %ebx
+loop_begin:
+	
+	decl %ebx
+
+	pushl -4(%ebp)
+	pushl $record
+	call write_record
+	addl $8, %esp
+
+	cmpl $0, %ebx
+	jne loop_begin
+
+movl $1, %eax
+movl $0, %ebx
+int $0x80
+	

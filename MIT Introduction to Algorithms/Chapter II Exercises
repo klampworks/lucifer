@@ -131,3 +131,38 @@ O(n) for bpth cases because we do not concern ourselves with constants in O-nota
   |03 26 41 52|        |09 38 49 57|
  |03 41|   |26 52|   |38 57|   |09 49|
 |03| |41| |52| |26| |38| |57| |09| |49|
+
+2.3-2
+merge(A, p, q, r)
+n1 = 1 - p + 1
+n2 = r - q
+let L[n1], R[n2]
+
+for i = 1 to n1
+	L[i] = A[p+i-1]
+for j = 1 to n2
+	R[j] = A[q+j]
+L[n1+1] = inf
+R[n2+1] = inf
+i = 1
+j = 1
+
+for k = p to r
+	if i > n1
+		goto moveleft
+	if j > n2
+		goto moveright
+	if L[i] <= R[j]
+		goto moveleft
+	else	
+		goto moveright
+	
+	moveleft:
+		A[k] = L[i]
+		++i
+		continue
+	moveright:
+		A[k] = R[j]
+		++j
+		continue
+

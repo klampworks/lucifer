@@ -118,5 +118,10 @@ is sorted by virtue of being a single element array.
 
 O(n^2)
 
+2.2-3
+On average a linear search will iterate through half the elemetns if the element
+being searched for is equally likely to be any element in the array.
+
+O(n) for bpth cases because we do not concern ourselves with constants in O-notation.
 
 

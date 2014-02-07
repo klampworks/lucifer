@@ -176,6 +176,10 @@ T(2^k+1) = 2T(2^k+1 / 2) + 2^k+1
 	= 2^k+1 ((lg2^k) + 1)
 	= 2^k+1 lg 2^k+1
 
+2.4-4
+	T(n) = O(1) if n = 1 
+	T(n) = T(n-1) + O(n)
+
 2.4-5
 
 int binary_search(A, l, r, s)

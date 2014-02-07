@@ -193,3 +193,6 @@ int binary_search(A, l, r, s)
 		return binary_search(A, l, pivot, s)
 
 To go from the base case og r-l == 1, return item not found, backwards until we reach the full starting array, we need to double the pivot until we reach the original input length. This takes 2^k =n where k = log2,n
+
+2.3-6
+The runtime of binary search is log(n) and it must be performed n times therefor nlogn. However there are still the swapping operations to consider. IN the worst case as input sorted backwards n swaps must be performed. Therefor the worst case runtime is still n^2

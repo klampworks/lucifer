@@ -176,3 +176,20 @@ T(2^k+1) = 2T(2^k+1 / 2) + 2^k+1
 	= 2^k+1 ((lg2^k) + 1)
 	= 2^k+1 lg 2^k+1
 
+2.4-5
+
+int binary_search(A, l, r, s)
+	
+	int pivot = (l+r)/2
+
+	if A[pivot] == s
+		return pivot
+	if r-l == 1
+		return -1
+
+	if s > A[pivot]
+		return binary_search(A, pivot, r, s)
+	else
+		return binary_search(A, l, pivot, s)
+
+To go from the base case og r-l == 1, return item not found, backwards until we reach the full starting array, we need to double the pivot until we reach the original input length. This takes 2^k =n where k = log2,n

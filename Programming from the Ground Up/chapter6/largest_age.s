@@ -51,8 +51,9 @@ _start:
 		movl %eax, -8(%ebp)
 		jmp read_loop
 
-	movl $1, %eax
-	movl -8(%ebp), %ebx
-	int $0x80
+	finished_reading:
+		movl $1, %eax
+		movl -8(%ebp), %ebx
+		int $0x80
 
 			

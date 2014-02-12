@@ -1,0 +1,27 @@
+2.2-1
+O(n^3)
+
+2.2-2
+section-sort(A)
+
+	for i = 1 to A.length - 1
+		min = i
+		for j = i to A.length
+			if A[j] < A[min]
+				min = j
+		swap A[min], A[i]
+
+loop invariant: Everything smaller than i is sorted.
+
+It runs for n-1 iterations because when i = n, everything before i is sorted and n
+is sorted by virtue of being a single element array.
+
+O(n^2)
+
+2.2-3
+On average a linear search will iterate through half the elemetns if the element
+being searched for is equally likely to be any element in the array.
+
+O(n) for bpth cases because we do not concern ourselves with constants in O-notation.
+
+(n) for bpth cases because we do not concern ourselves with constants in O-notation.(n) for bpth cases because we do not concern ourselves with constants in O-notation.

@@ -1,0 +1,74 @@
+2.3-1
+       |03 09 26 38 41 49 52 57|
+  |03 26 41 52|        |09 38 49 57|
+ |03 41|   |26 52|   |38 57|   |09 49|
+|03| |41| |52| |26| |38| |57| |09| |49|
+
+2.3-2
+merge(A, p, q, r)
+n1 = 1 - p + 1
+n2 = r - q
+let L[n1], R[n2]
+
+for i = 1 to n1
+	L[i] = A[p+i-1]
+for j = 1 to n2
+	R[j] = A[q+j]
+L[n1+1] = inf
+R[n2+1] = inf
+i = 1
+j = 1
+
+for k = p to r
+	if i > n1
+		goto moveleft
+	if j > n2
+		goto moveright
+	if L[i] <= R[j]
+		goto moveleft
+	else	
+		goto moveright
+	
+	moveleft:
+		A[k] = L[i]
+		++i
+		continue
+	moveright:
+		A[k] = R[j]
+		++j
+		continue
+
+2.4.3
+	T(n) = 2T(n/2) + n
+	n = 2^k+1
+
+T(2^k+1) = 2T(2^k+1 / 2) + 2^k+1
+	= 2T(2^k) + "^k+1
+	= 2(2^k lg 2^k) + 2^k+1
+	= 2^k+1 ((lg2^k) + 1)
+	= 2^k+1 lg 2^k+1
+
+2.4-4
+	T(n) = O(1) if n = 1 
+	T(n) = T(n-1) + O(n)
+
+2.4-5
+
+int binary_search(A, l, r, s)
+	
+	int pivot = (l+r)/2
+
+	if A[pivot] == s
+		return pivot
+	if r-l == 1
+		return -1
+
+	if s > A[pivot]
+		return binary_search(A, pivot, r, s)
+	else
+		return binary_search(A, l, pivot, s)
+
+To go from the base case og r-l == 1, return item not found, backwards until we reach the full starting array, we need to double the pivot until we reach the original input length. This takes 2^k =n where k = log2,n
+
+2.3-6
+The runtime of binary search is log(n) and it must be performed n times therefor nlogn. However there are still the swapping operations to consider. IN the worst case as input sorted backwards n swaps must be performed. Therefor the worst case runtime is still n^2

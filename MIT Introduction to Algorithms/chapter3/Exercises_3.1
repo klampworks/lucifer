@@ -24,3 +24,16 @@ Because O is strictly an upper bound only.
 Yes.
 No.
 
+3.1-6
+
+T(g(n)) = { f(n) : there exist positive constants c1, c2, n0 such that 
+O <= c1g(n) <= f(n) <= c2g(n) forall n >= n0 }
+
+O(g(n)) = { f(n) : there exist positive constants c, n0 such that 
+O <= f(n) <= cg(n) forall n >= n0 }
+
+W(g(n)) = { f(n) : there exist positive constants c, n0 such that 
+O <= cg(n) <= f(n) forall n >= n0 }
+
+0 <= g(n) <= f(n) <= g(n)
+W(n) = T(n) = W(n)

@@ -4,7 +4,7 @@
 
 error_exit:
 	pushl %ebp
-	movl $esp, %ebp
+	movl %esp, %ebp
 
 	# Error code, first parameter.
 	movl 8(%ebp), %ecx

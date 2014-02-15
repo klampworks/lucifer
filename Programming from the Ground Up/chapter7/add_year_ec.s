@@ -1,5 +1,5 @@
-.include "linux.s"
-.include "record_def.s"
+.include "../chapter6/linux.s"
+.include "../chapter6/record_def.s"
 
 .section .data
 input_file_name:
@@ -27,7 +27,7 @@ _start:
 	movl %eax, -4(%ebp)
 
 	cmpl $0, %eax
-	jl continue_processing
+	je continue_processing
 
 	.section .data
 	no_open_file_code:

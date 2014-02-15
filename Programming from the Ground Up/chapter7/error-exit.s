@@ -14,7 +14,7 @@ error_exit:
 	popl %ecx
 
 	movl %eax, %edx
-	movl $3, %ebx
+	movl $2, %ebx
 	movl $4, %eax
 	int $0x80
 
@@ -25,11 +25,11 @@ error_exit:
 	popl %ecx
 
 	movl %eax, %edx
-	movl $3, %ebx
+	movl $2, %ebx
 	movl $4, %eax
 	int $0x80
 
-	pushl $3
+	pushl $2
 	call write_newline
 
 	movl $1, %eax

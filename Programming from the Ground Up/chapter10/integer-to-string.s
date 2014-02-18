@@ -17,7 +17,7 @@ integer2string:
 		pushl %edx
 		incl %ecx
 
-		cmpl $0m %eax
+		cmpl $0, %eax
 		je end_conversion_loop
 
 		jmp conversion_loop

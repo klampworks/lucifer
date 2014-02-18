@@ -2,6 +2,7 @@
 .section .text
 
 .globl factorial
+.type factorial,@function
 
 factorial:
 	pushl %ebp

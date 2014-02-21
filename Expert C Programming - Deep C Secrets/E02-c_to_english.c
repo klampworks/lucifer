@@ -9,6 +9,7 @@ struct token {
 	char string[MAXTOKENLEN];
 };
 
+int top = 0;
 struct token stack[MAXTOKENS];
 struct token this;
 const char *input;
@@ -63,8 +64,10 @@ void gettoken()
 	}
 	this.string[i] = '\0';
 
-	if (st == en)
+	if (st == en) {
+		this.type = 'u';
 		return;
+	}
 
 	/* Single character. */
 	if (en - st == 1 
@@ -88,7 +91,25 @@ void gettoken()
 
 void read_to_first_identifier()
 {
+	/* No error checking. NO identifier means syntax error. */
+	for (;;) {
 
+		gettoken();
+
+		/* If we get to the end of the input and there is
+		 * no identifier than just die to avoid inifinite loop. */
+		assert(this.type != 'u');
+
+		if (this.type == 'i')
+			break;
+
+		++top;
+		assert(top < MAXTOKENS);
+		stack[top].type = this.type;
+		strcpy(stack[top].string, this.string); 
+	}
+
+	printf("Identifier is %s\n", this.string);
 }
 
 int main(int argc, char **argv)

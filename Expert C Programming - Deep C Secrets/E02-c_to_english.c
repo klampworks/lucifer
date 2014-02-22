@@ -113,6 +113,14 @@ void read_to_first_identifier()
 	gettoken();
 }
 
+void deal_with_arrays()
+{
+	while(this.type != ']') {
+		gettoken();
+		printf("%s", this.string);
+	}
+}
+
 void deal_with_declarator()
 {
 	if (this.type == '[')

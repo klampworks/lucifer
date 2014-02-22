@@ -91,7 +91,7 @@ void gettoken()
 
 void read_to_first_identifier()
 {
-	/* No error checking. NO identifier means syntax error. */
+	/* No error checking. No identifier means syntax error. */
 	for (;;) {
 
 		gettoken();
@@ -110,6 +110,19 @@ void read_to_first_identifier()
 	}
 
 	printf("Identifier is %s\n", this.string);
+	gettoken();
+}
+
+void deal_with_declarator()
+{
+	if (this.type == '[')
+		deal_with_arrays();
+	else if (this.type == '(')
+		deal_with_function_args();
+
+	deal_with_any_pointers();
+
+
 }
 
 int main(int argc, char **argv)

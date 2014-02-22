@@ -161,7 +161,16 @@ void deal_with_declarator()
 
 	deal_with_any_pointers();
 
-
+	while(top >= 0) {
+		if (this.type == '(') {
+			pop();
+			gettoken();
+			deal_with_declarator();
+		} else
+			printf("%s ", this.string);
+			pop();
+		}
+	}
 }
 
 int main(int argc, char **argv)

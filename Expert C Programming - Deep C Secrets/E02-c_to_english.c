@@ -113,11 +113,42 @@ void read_to_first_identifier()
 	gettoken();
 }
 
+void pop()
+{
+	--top;
+	if (top < 0) {
+		this.type = '\0';
+		*this.string = '\0';
+		return;
+	}
+
+	this.type = stack[top].type;
+	this.string = stack[top].string;
+}
+
 void deal_with_arrays()
 {
 	while(this.type != ']') {
 		gettoken();
 		printf("%s", this.string);
+	}
+	pop();
+}
+
+void deal_with_function_args()
+{
+	while(this.type != ')') 
+		gettoken();
+
+	printf("Function returning ");
+	pop();
+}
+
+void deal_with_any_pointers()
+{
+	while(stack[top].type == '*') {
+		printf ("pointer to ");
+		pop();
 	}
 }
 

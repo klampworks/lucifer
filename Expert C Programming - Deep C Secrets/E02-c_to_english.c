@@ -123,7 +123,7 @@ void pop()
 	}
 
 	this.type = stack[top].type;
-	this.string = stack[top].string;
+	strcpy(this.string, stack[top].string);
 }
 
 void deal_with_arrays()
@@ -166,7 +166,7 @@ void deal_with_declarator()
 			pop();
 			gettoken();
 			deal_with_declarator();
-		} else
+		} else {
 			printf("%s ", this.string);
 			pop();
 		}
@@ -178,7 +178,6 @@ int main(int argc, char **argv)
 	assert(argc == 2);
 	input = argv[1];
 	
-	while (*input)
-		gettoken();
-
+	read_to_first_identifier();
+	deal_with_declarator();
 }

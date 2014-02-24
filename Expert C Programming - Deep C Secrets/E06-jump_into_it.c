@@ -1,3 +1,15 @@
+/*
+ * Exercise 06: Jump to it
+ *
+ * Take the source of a program you have already written and add 
+ * setjmp/longjmp to it, so that on receiving some particular input it will 
+ * start over again.
+ *
+ * The header file <setjmp.h> needs to be included in any source file that 
+ * uses setjmp or longjmp.
+ *
+ */
+
 #include <stdio.h>
 #include <setjmp.h>
 #include <stdlib.h>

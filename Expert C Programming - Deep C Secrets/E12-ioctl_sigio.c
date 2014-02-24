@@ -2,14 +2,18 @@
 #include <fcntl.h>
 #include <assert.h>
 #include <string.h>
+#include <stdlib.h>
+
 void handler(int i)
 {
-	char in[2];
+	char in[1];
 	size_t r = read(0, in, 1);
 
 	if (r > 0) {
-		in[1] = '\0';
-		write(1, in, 2);
+		if (in[0] == 'q')
+			exit(0);
+
+		write(1, in, 1);
 	}
 }
 

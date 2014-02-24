@@ -15,7 +15,12 @@ struct file *file_hash_table[FILE_HASH] = {NULL};
 int hash_filename(char *s)
 {
 	/* Disable hashing to test the linked link. */
+	#if 0
 	return 0;
+	#endif
+
+	int length = strlen(s);
+	return (length+4*(s[0]+4*s[length/2])) % FILE_HASH;
 }
 
 struct file* find_filename(char *s)
@@ -58,6 +63,7 @@ int main()
 	assert(!strcmp(f->fname, "three"));
 
 	/* Validate that the linked list works without hashing. */
+	#if 0
 	f = file_hash_table[0];
 	assert(!strcmp(f->fname, "three"));
 
@@ -69,4 +75,5 @@ int main()
 
 	f = f->flink;
 	assert(!f);
+	#endif
 }

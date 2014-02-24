@@ -1,3 +1,12 @@
+/* 
+ * Exercise 02: Write a Program to Translate C Declarations into English
+ *
+ * Here's the design. The main data structure is a stack, on which we store 
+ * tokens that we have read, while we are reading forward to the identifier. 
+ * Then we can look at the next token to the right by reading it, and the next 
+ * token to the left by popping it off the stack. 
+ */
+
 #include <stdio.h>
 #include <assert.h>
 #include <string.h>

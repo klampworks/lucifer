@@ -1,3 +1,11 @@
+/*
+ * Exercise 04: Stack Hack
+ *
+ * Compile and run this small test program to discover the approximate 
+ * location of the stack on your system.
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

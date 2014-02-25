@@ -1,3 +1,11 @@
+/*
+ * Exercise 8: How Much Memory Can You Allocate?
+ *
+ * Run the following program to see how much memory you can allocate in your 
+ * process.
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

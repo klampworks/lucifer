@@ -1,3 +1,13 @@
+/*
+ * Exercise 7: How to Exceed the Speed Limit?
+ *
+ * Imagine that you have been given the task of writing a program to read a 
+ * file of 10,000 numbers and calculate the average. Your program must run in 
+ * the shortest amount of time. What programming and compiler techniques will 
+ * you use to achieve this?
+ *
+ */
+
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>

@@ -1,3 +1,22 @@
+/*
+ * Exercise 14: Play Around with Array/Pointer Arguments
+ *
+ * Define a function that takes a character array ca as an argument. 
+ * Inside the function, print out the values of &ca and &(ca[0]) and &(ca[1]).
+ * Define another function that takes a character pointer pa as an argument.
+ * Inside the function, print out the values of &pa and &(pa[0]) and
+ * &(pa[1]) and ++pa.
+ * Set up a global character array ga and initialize it with the letters of the
+ * alphabet. Call the two functions using this global as the parameter. Compare
+ * the values that you print out.
+ * In the main routine, print out the values of &ga and &(ga[0]) and
+ * &(ga[1]).
+ * Before running your program, write down which values you expect to match,
+ * and why. Account for any discrepancies between your expected answers and
+ * observed results.
+ *
+ */
+
 #include <assert.h>
 
 char ga[] = {'a', 'b', 'c'};

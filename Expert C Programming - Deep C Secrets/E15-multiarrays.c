@@ -1,3 +1,19 @@
+/*
+ * Exercise 15: Hooray for Arrays!
+ *
+ * Using the declarations:
+ * intintintapricot[2][3][5];
+ * (*r)[5] = apricot[0];
+ * *t = apricot[0][0];
+ * write a program to print out the initial values of r and t in hex (use 
+ * the %x printf conversion character to print a hex value), increment these 
+ * two pointers, and print out their new values.
+ * Before running the program, predict how many bytes the increment will 
+ * actually cause to be added to each pointer. Use Figure 9-8 on page 255 to 
+ * help you.
+ *
+ */
+
 #include <stdio.h>
 #include <assert.h>
 

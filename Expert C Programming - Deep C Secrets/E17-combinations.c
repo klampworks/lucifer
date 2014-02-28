@@ -1,3 +1,10 @@
+/*
+ * Exercise 17: Check It Out
+ *
+ * Type in the C code in Figure 10-6 and try it for yourself.
+ *
+ */
+
 my_function_1( int fruit [2][3][5] ) { ; }
 my_function_2( int fruit [][3][5] ) { ; }
 my_function_3( int (*fruit)[3][5] ) { ; }

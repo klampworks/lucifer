@@ -1,3 +1,12 @@
+/*
+ * Exercise 13: Write a Hash Program
+ *
+ * Type in the fragment of code above, and supply enough of the missing types, 
+ * data, and code to get it running as a program. Then (horrors!) debug it 
+ * into existence.
+ *
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>

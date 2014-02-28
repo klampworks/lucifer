@@ -1,3 +1,16 @@
+/*
+ * Exercise 18: Dynamically Growing Your Arrays
+ *
+ * Write a main() routine to go with the above function, check the original 
+ * storage array,fill it with enough elements that you cause a reallocation 
+ * to take place. Extra Credit: and Add a couple of statements to 
+ * add_element() so that it is also responsible for the initial memory 
+ * allocation of the dynamic area. What are the advantages and disadvantages of
+ * doing this? How could you use setjmp()/longjmp() to gracefully cope with an 
+ * error in growing the table?
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,8 +1,8 @@
 ![Book cover](cover.jpg)
 
 Title: Expert C Programming: Deep C Secrets<br>
-Author: Peter van der Linden
-Pages: 290
+Author: Peter van der Linden<br>
+Pages: 290<br>
 Progress: Complete<br>
 Link: [Amazon](http://www.amazon.com/dp/0131774298/)<br>
 

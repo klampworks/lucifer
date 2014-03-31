@@ -9,6 +9,7 @@ A collection of examples and exercises from books I've read.
 |  Effective C++	| Scott Meyers		| 320	| Complete | C++
 |  Expert C Programming  | Peter van der Linden | 290 | Complete | C
 | MIT Introduction to Algorithms      | Thomas H. Cormen et al      |   1313 | In Progress | Algorithms
+| Modern Perl 		| Chromatic	| 276	| 276	| Complete	| Perl
 | More Effective C++	| Scott Meyers		| 337	| Complete | C++
 | Linux System Programming | Robert Love 	| 400	| Complete | Linux & Unix system internals |
 | Practical Vim	 | Drew Neil			| 300	| In progress | Vim

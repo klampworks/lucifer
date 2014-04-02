@@ -12,6 +12,6 @@ A collection of examples and exercises from books I've read.
 | Modern Perl 		| Chromatic	| 276	| 276	| Complete	| Perl
 | More Effective C++	| Scott Meyers		| 337	| Complete | C++
 | Linux System Programming | Robert Love 	| 400	| Complete | Linux & Unix system internals |
-| Practical Vim	 | Drew Neil			| 300	| In progress | Vim
+| Practical Vim	 | Drew Neil			| 300	| Complete | Vim
 | Programming from the Ground Up | Jonathan Bartlett      |   326 | Complete | x86 assembly
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 

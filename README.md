@@ -6,6 +6,7 @@ A collection of examples and exercises from books I've read.
 | Title        | Author           | Pages  | Status | Skills
 | ------------- |-------------| -----|--------------|------------|
 |  Advanced Linux Programming |  Mark L. Mitchell | 340 | Complete | Linux & Unix system internals |
+| Code Complete | Steve McConnell | 950 | In progress | Software Engineering |
 |  Effective C++	| Scott Meyers		| 320	| Complete | C++
 |  Expert C Programming  | Peter van der Linden | 290 | Complete | C
 | MIT Introduction to Algorithms      | Thomas H. Cormen et al      |   1313 | In Progress | Algorithms

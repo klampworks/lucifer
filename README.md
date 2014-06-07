@@ -6,7 +6,7 @@ A collection of examples and exercises from books I've read.
 | Title        | Author           | Pages  | Status | Skills
 | ------------- |-------------| -----|--------------|------------|
 |  Advanced Linux Programming |  Mark L. Mitchell | 340 | Complete | Linux & Unix system internals |
-| Algorithms + Data Structures = Programs | Niklaus Wirth | Complete | |
+| Algorithms + Data Structures = Programs | Niklaus Wirth | 366 | Complete | |
 | Code Complete | Steve McConnell | 950 | In progress | Software Engineering |
 |  Effective C++	| Scott Meyers		| 320	| Complete | C++
 |  Expert C Programming  | Peter van der Linden | 290 | Complete | C

@@ -6,6 +6,7 @@ A collection of examples and exercises from books I've read.
 | Title        | Author           | Pages  | Status | Skills
 | ------------- |-------------| -----|--------------|------------|
 |  Advanced Linux Programming |  Mark L. Mitchell | 340 | Complete | Linux & Unix system internals |
+| Algorithms + Data Structures = Programs | Niklaus Wirth | Complete | |
 | Code Complete | Steve McConnell | 950 | In progress | Software Engineering |
 |  Effective C++	| Scott Meyers		| 320	| Complete | C++
 |  Expert C Programming  | Peter van der Linden | 290 | Complete | C
@@ -15,4 +16,6 @@ A collection of examples and exercises from books I've read.
 | Linux System Programming | Robert Love 	| 400	| Complete | Linux & Unix system internals |
 | Practical Vim	 | Drew Neil			| 300	| Complete | Vim
 | Programming from the Ground Up | Jonathan Bartlett      |   326 | Complete | x86 assembly
+| Secure Coding |  Mark G | 224 | In Progress | |
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 
+| The Pragmatic Programmer | Andrew Hunt | 352 | Complete | |

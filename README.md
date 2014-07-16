@@ -16,6 +16,6 @@ A collection of examples and exercises from books I've read.
 | Linux System Programming | Robert Love 	| 400	| Complete | Linux & Unix system internals |
 | Practical Vim	 | Drew Neil			| 300	| Complete | Vim
 | Programming from the Ground Up | Jonathan Bartlett      |   326 | Complete | x86 assembly
-| Secure Coding |  Mark G | 224 | In Progress | |
+| Secure Coding |  Mark G | 224 | Complete | |
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 
 | The Pragmatic Programmer | Andrew Hunt | 352 | Complete | |

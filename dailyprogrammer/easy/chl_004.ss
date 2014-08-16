@@ -14,18 +14,13 @@ For even more extra credit, allow the user to specify the length of the strings 
 (define z (char->integer #\z))	
 (random-source-randomize! default-random-source)
 
-;; Putting this in a function returns the same character everytime.
-;;(define gen-char 
-;;  (integer->char (+ a (random-integer (- z a)))))
+(define gen-char 
+  (lambda () (integer->char (+ a (random-integer (- z a))))))
 
 (define (gen-string n s)
   (if (> n 0)
     (gen-string (- n 1) 
-		(string-append s 
-			       (string 
-				 (integer->char 
-				   (+ a 
-				      (random-integer (- z a)))))))
+		(string-append s (string (gen-char))))
     s))
 
 (print (gen-string 5 ""))

@@ -16,6 +16,7 @@ A collection of examples and exercises from books I've read.
 | Modern Perl 		| Chromatic	| 276	| Complete	| Perl
 | More Effective C++	| Scott Meyers		| 337	| Complete | C++
 | Linux System Programming | Robert Love 	| 400	| Complete | Linux & Unix system internals |
+| Practical Perforce | Laura Wingerd | 362 | Complete | Perforce, SCM strategies |
 | Practical Programming in Tcl | Welch | 960 | Complete | TCL, Ancient history |
 | Practical Vim	 | Drew Neil			| 300	| Complete | Vim
 | Programming from the Ground Up | Jonathan Bartlett      |   326 | Complete | x86 assembly

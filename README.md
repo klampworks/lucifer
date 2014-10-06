@@ -23,4 +23,5 @@ A collection of examples and exercises from books I've read.
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 
 | The Little Schemer | Friedman, Felleisen, Biddy | 216 | Complete | Functional programming, Scheme |
 | The Pragmatic Programmer | Andrew Hunt | 352 | Complete | |
+| The Rootkit Arsenal | Bill Blunden | 784 | Complete | Security, Operating systems, API design, Computer Architecture |
 | Why's (Poignant) Guide to Ruby | Why | 176 | Complete | |

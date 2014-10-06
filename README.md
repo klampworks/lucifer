@@ -7,6 +7,7 @@ A collection of examples and exercises from books I've read.
 | ------------- |-------------| -----|--------------|------------|
 |  Advanced Linux Programming |  Mark L. Mitchell | 340 | Complete | Linux & Unix system internals |
 | Algorithms + Data Structures = Programs | Niklaus Wirth | 366 | Complete | |
+| Bluetooth 1.1 | Jennifer Bray, Charles F. Sturman | 624 | Complete | Bluetooth, Wireless communication |
 | Code Complete | Steve McConnell | 950 | In progress | Software Engineering |
 |  Effective C++	| Scott Meyers		| 320	| Complete | C++
 |  Expert C Programming  | Peter van der Linden | 290 | Complete | C

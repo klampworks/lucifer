@@ -24,6 +24,7 @@ A collection of examples and exercises from books I've read.
 | Secure Coding |  Mark G | 224 | Complete | |
 | Sketchy LISP	| Nils M Holm | 164 | Complete | Functional programming, Scheme |
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 
+| The Definitive Guide to the Xen Hypervisor | David Chisnall | 320 | In progress | Xen, Operating systems, Computer Architecture | 
 | The Little Schemer | Friedman, Felleisen, Biddy | 216 | Complete | Functional programming, Scheme |
 | The Pragmatic Programmer | Andrew Hunt | 352 | Complete | Software engineering |
 | The Rootkit Arsenal | Bill Blunden | 784 | Complete | Security, Operating systems, API design, Computer Architecture |

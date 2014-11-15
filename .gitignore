@@ -1,2 +1,6 @@
 *.o
 *.swp
+a.out
+*
+!*.*
+!Makefile

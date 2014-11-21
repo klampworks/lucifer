@@ -1,0 +1,50 @@
+1. How do assemblers and linkers work together?
+
+† Assemblers turn human readable source files into binary object files.
+Linkers bring the object files together to create an executable file.
+
+2. How will studying assembly language enhance your understanding of operating systems?
+
+† Interfacing with system calls directly instead of thread the C runtime is
+one way.
+
+3. What is meant by a one-to-many relationship when comparing a high-level
+language to machine language?
+
+† One high level programming statement may translate into many machine
+instructions.
+
+4. Explain the concept of portability as it applies to programming languages.
+
+† Can run, with little or no modification, on another operating system or
+processor.
+
+5. Is the assembly language for x86 processors the same as those for computer systems such as the Vax or Motorola 68x00?
+
+† I'm not only enough to know that those other 2 things are but probably not.
+
+6. Give an example of an embedded systems application.
+
+† Home router.
+
+7. What is a device driver?
+
+† Software for manageing hardware devices used by an operating system kernel.
+
+8. Do you suppose type checking on pointer variables is stronger (stricter) in assembly language or in C and C++?
+
+† Assembly is untyped.
+
+9. Name two types of applications that would be better suited to assembly language than a high-level language.
+
+† PC BIOS typically requires at least some assembly (Coreboot is only mostly
+C). 
+
+10. Why would a high-level language not be an ideal tool for writing a program that directly accesses a particular brand of printer?
+
+† Possibly too slow if real time access is needed, too much overhead of
+hardware costs are to be kept to a minimum.
+
+11. Why is assembly language not usually used when writing large application  programs?
+
+† Difficult to read and write.

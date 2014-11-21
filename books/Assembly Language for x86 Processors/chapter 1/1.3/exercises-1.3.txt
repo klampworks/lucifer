@@ -1,0 +1,26 @@
+1. Explain the term Least Significant Bit (LSB).
+
+† The one representing 1.
+
+2. Explain the term Most Significant Bit (MSB).
+
+† The one representing the highest digit i.e. 128 in an octet.
+
+3. What is the decimal representation of each of the following unsigned binary
+integers?
+a. 11111000
+248
+b. 11001010
+202
+c. 11110000
+240
+
+4. What is the decimal representation of each of the following unsigned binary
+integers?
+a. 00110101
+53
+b. 10010110
+150
+c. 11001100
+204
+

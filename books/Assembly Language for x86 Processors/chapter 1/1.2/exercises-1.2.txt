@@ -1,0 +1,39 @@
+1. In your own words, describe the virtual machine concept.
+
+† Source code is translated into byte code which is compiled into native code
+by the virtual machine at runtime. Issues of portability are then handled by
+the developers of the VM and not regular language users.
+
+2. Why don’t programmers write application programs in machine language?
+
+† Slow and error prone. The cons outweigh and pros for most types of
+applications.
+
+3. (True/False): When an interpreted program written in language L1 runs, each
+of its instructions is decoded and executed by a program written in language L0.
+
+† False, there are interpreters written in their own langauge i.e. pypy both
+interprets Python and is itself written in Python.
+
+4. Explain the technique of translation when dealing with languages at different virtual machine levels.
+
+† Bytecode for the higher level vm is translated into bytecode for the lower
+layer VM instead of into native code.
+
+5. At which level does assembly language appear in the virtual machine example
+shown in this section?
+
+† The bottom above hardware.
+
+6. What software permits compiled Java programs to run on almost any computer?
+
+† The Java Virtual Machine.
+
+7. Name the four virtual machine levels named in this section, from lowest to highest.
+8. Why don’t programmers write applications in machine language?
+
+† For the same reason as question 2.
+
+9. Machine language is used at which level of the virtual machine shown in Figure 1–1?
+
+† Level 2.

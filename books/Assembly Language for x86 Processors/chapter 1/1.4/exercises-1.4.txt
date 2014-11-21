@@ -1,0 +1,19 @@
+1. Describe the following boolean expression: ¬X ∨ Y.
+
+† NOT X or Y
+
+2. Describe the following boolean expression: (X ∧ Y).
+
+† X AND Y
+
+3. What is the value of the boolean expression (T ∧ F) ∨ T ?
+
+† T
+
+4. What is the value of the boolean expression ¬(F ∨ T) ?
+
+† F
+
+5. What is the value of the boolean expression ¬F ∨ ¬T ?
+
+† T

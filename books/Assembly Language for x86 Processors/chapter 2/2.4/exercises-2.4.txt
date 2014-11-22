@@ -1,0 +1,32 @@
+1. Describe SRAM and its most common use.
+
+† High speed and expensive, used for CPU caches.
+
+2. Describe VRAM.
+
+† Dual ported for video data.
+
+3. List at least two features found in the Intel P965 Express chipset.
+
+† 10 USB ports and 6 PCI slots.
+
+4. Name four types of RAM mentioned in this chapter.
+
+† dram, sram, vram and cmos ram.
+ 
+5. Which type of RAM is used for Level 2 cache memory?
+
+† SRAM.
+
+6. What advantages does a USB device offer over a standard serial or parallel device?
+
+† Faster.
+
+7. What is the purpose of the 8259A PIC controller?
+
+† Handles hardware interrupts.
+
+8. What are the main differences between Wi-Fi and Bluetooth?
+
+† Bluetooth is better.
+

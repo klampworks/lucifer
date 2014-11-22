@@ -1,0 +1,29 @@
+1. Of the four levels of input/output in a computer system, which is the most universal and portable?
+
+† Library functions.
+
+2. What characteristics distinguish BIOS-level input/output?
+
+† To control device specific features.
+
+3. Why are device drivers necessary, given that the BIOS already has code that communicates with the computer’s hardware?
+
+† Adding new hardware should not require a BIOS upgrade, only a new OS driver.
+
+4. In the example regarding displaying a string of characters, which level
+exists between the operating system and the video controller card?
+
+† Bios.
+
+5. At which level(s) can an assembly language program manipulate input/output?
+
+† Depends if there is an operating system in the way or not.
+
+6. Why do game programs often send their sound output directly to the sound card’s hardware ports?
+
+† Performance I guess.
+
+7. Challenge: Is it likely that the BIOS for a computer running MS-Windows would be different from that used by a computer running Linux?
+
+† Not likely but there are open source BIOS implementations.
+

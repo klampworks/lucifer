@@ -1,0 +1,48 @@
+1. The central processor unit (CPU) contains registers and what other basic elements?
+
+† Clock, contorl until, and arithmatic logic unit.
+
+2. The central processor unit is connected to the rest of the computer system using what three buses?
+
+† Address, data, and control bus.
+
+3. Why does memory access take more machine cycles than register access?
+
+† Because data must be fetched through the system bus.
+
+4. What are the three basic steps in the instruction execution cycle?
+
+† Fetach, decode, execute.
+
+5. Which two additional steps are required in the instruction execution cycle when a memory operand is used?
+
+† Fetch and store the operands.
+
+6. During which stage of the instruction execution cycle is the program counter incremented?
+
+† During the fetch phase.
+
+7. When a program runs, what information does the OS read from the filename’s disk directory entry?
+
+† File size and physical location.
+
+8. After a program has been loaded into memory, how does it begin execution?
+
+† One instruction at a time.
+
+9. Define multitasking.
+
+† Seperate tasks sharing the CPU in a way that makes it seem to the use that
+they are all running at the same time,
+
+10. What is the function of the OS scheduler?
+
+† To assign time slices to different processes and decide which one to run
+next.
+
+11. When the processor switches from one task to another, what values in the first task’s state must be preserved?
+
+† Registers.
+
+12. What is the duration of a single clock cycle in a 3-GHz processor?
+

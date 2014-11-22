@@ -1,0 +1,64 @@
+1. What are the x86 processor’s three basic modes of operation?
+
+† Real, protected and virtual 8086.
+
+2. Name all eight 32-bit general-purpose registers.
+
+† eax, ebx, ecx, edx, esp, ebp, esi, edi
+
+3. Name all six segment registers.
+
+† cs, ss, ds, es, fs, gs
+
+4. What special purpose does the ECX register serve?
+
+† It is used as a loop counter by the CPU.
+
+5. Besides the stack pointer (ESP), what other register points to variables on the stack?
+
+† ebp, the base pointer.
+
+6. Name at least four CPU status flags.
+
+† Overflow, Zero, overflow, carry.
+
+7. Which flag is set when the result of an unsigned arithmetic operation is too large to fit into the destination?
+
+† Carry.
+
+8. Which flag is set when the result of a signed arithmetic operation is either too large or too small to fit into the destination?
+
+† Overflow.
+
+9. Which flag is set when an arithmetic or logical operation generates a negative result?
+
+† Sign.
+
+10. Which part of the CPU performs floating-point arithmetic?
+
+The floating pointing point.
+
+11. How many bits long are the FPU data registers?
+
+† 80 bits aparently.
+
+12. Which Intel processor was the first member of the IA-32 family?
+
+† Intel 80386.
+
+13. Which Intel processor first introduced superscalar execution?
+
+† Pentium.
+
+14. Which Intel processor first used MMX technology?
+
+† Pentium.
+
+15. Describe the CISC design approach.
+
+† Complex instructin set allows fewer instructions but a longer time to decode
+and execute each one through microcode.
+
+16. Describe the RISC design approach.
+
+† Short instructions executed in hardware.

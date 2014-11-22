@@ -1,0 +1,40 @@
+1. What is the range of addressable memory in protected mode?
+
+† 4GB.
+
+2. What is the range of addressable memory in real-address mode?
+
+† 1MB.
+
+3. The two ways of describing an address in real-address mode are
+segment-offset and ______________.
+
+† Linear address.
+
+4. In real-address mode, convert the following hexadecimal segment-offset address to a linear address: 0950:0100.
+
+† 09650h
+
+5. In real-address mode, convert the following hexadecimal segment-offset address to a linear address: 0CD1:02E0.
+
+† cff0
+
+6. In MASM’s flat segmentation model, how many bits hold the address of an instruction or variable?
+
+† 32.
+
+7. In protected mode, which register references the descriptor for the stack segment?
+
+† SS.
+
+8. In protected mode, which table contains pointers to memory segments used by a single program?
+
+† DS.
+
+9. In the flat segmentation model, which table contains pointers to at least two segments?
+
+† Global Descritor Table.
+
+10. What is the main advantage to using the paging feature of x86 processors?
+
+† Pages can be swapped to disk.

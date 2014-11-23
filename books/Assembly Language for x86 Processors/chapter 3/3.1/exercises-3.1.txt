@@ -1,0 +1,73 @@
+1. Identify valid suffix characters used in integer constants.
+
+h, o, d, b, r, t and y.
+
+2. (Yes/No): Is A5h a valid hexadecimal constant?
+
+† Yes, 165.
+
+3. (Yes/No): Does the multiplication operator (*) have a higher precedence
+than the division operator (/) in integer expressions?
+
+† No, they are the same.
+
+4. Write a constant expression that divides 10 by 3 and returns the integer
+remainder.
+
+† Extern.
+
+5. Show an example of a valid real number constant with an exponent.
+
+† Extern.
+
+6. (Yes/No): Must string constants be enclosed in single quotes?
+
+† They may be enclosed in single quotes too.
+
+7. Reserved words can be instruction mnemonics, attributes, operators,
+predefined symbols, and __________.
+
+† Register names.
+
+8. What is the maximum length of an identifier?
+
+† 247 characters.
+
+9. (True/False): An identifier cannot begin with a numeric digit.
+
+† True.
+
+10. (True/False): Assembly language identifiers are (by default) case insensitive.
+
+† True.
+
+11. (True/False): Assembler directives execute at runtime.
+
+† False.
+
+12. (True/False): Assembler directives can be written in any combination of uppercase and lowercase letters.
+
+† True.
+
+13. Name the four basic parts of an assembly language instruction.
+
+Optional label, operation, operands, optional comment.
+
+14. (True/False): MOV is an example of an instruction mnemonic.
+
+† True.
+
+15. (True/False): A code label is followed by a colon (:), but a data label
+does not have a colon.
+
+† True.
+
+16. Show an example of a block comment.
+
+† Extern.
+
+17. Why would it not be a good idea to use numeric addresses when writing
+instructions that access variables?
+
+† Variables may not always reside at the same address, especially on a system
+that implements space layout randomisation.

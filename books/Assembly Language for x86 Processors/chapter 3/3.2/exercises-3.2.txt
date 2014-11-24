@@ -1,0 +1,40 @@
+1. In the AddSub program (Section 3.2), what is the meaning of the INCLUDE
+directive?
+
+† Adds definitions from the file included.
+
+2. In the AddSub program, what does the .CODE directive identify?
+
+† Identifies the start of the code segment, home of executable statements.
+
+3. What are the names of the segments in the AddSub program?
+
+† .code appears to be the only segment specified in AddSub.
+
+4. In the AddSub program, how are the CPU registers displayed?
+
+† Through a library function call DumpRegs.
+
+5. In the AddSub program, which statement halts the program?
+
+† The exit statement.
+
+6. Which directive begins a procedure?
+
+† The proc directive.
+
+7. Which directive ends a procedure?
+
+† The endp directive.
+
+8. What is the purpose of the identifier in the END statement?
+
+† To identify the program's startup procedure.
+
+9. What does the PROTO directive do?
+
+Declares a prototype for functions that have not been defined yet or are
+defined elsewhere.
+
+
+

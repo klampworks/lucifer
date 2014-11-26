@@ -38,8 +38,6 @@ let rec merge x y =
       then hx :: merge tx (hy :: ty)
       else hy :: merge (hx :: tx) ty;;
 
-msort : int list -> int list ;;
-
 let rec msort l =
   match l with
     [] -> []
@@ -55,4 +53,4 @@ let rec print_list l =
 	[] -> ()
 	| h::t -> print_int h; print_string " "; print_list t;;
 
-print_list (msort [53; 9; 2; 6; 19] );;
+(*print_list (msort [53; 9; 2; 6; 19] );;*)

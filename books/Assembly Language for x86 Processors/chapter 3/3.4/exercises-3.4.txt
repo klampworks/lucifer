@@ -1,0 +1,48 @@
+1. Create an uninitialized data declaration for a 16-bit signed integer.
+
+† Extern.
+
+2. Create an uninitialized data declaration for an 8-bit unsigned integer.
+
+† Extern.
+
+3. Create an uninitialized data declaration for an 8-bit signed integer.
+
+† Extern.
+
+4. Create an uninitialized data declaration for a 64-bit integer.
+
+† Extern.
+
+5. Which data type can hold a 32-bit signed integer?
+
+† SDWORD
+
+6. Declare a 32-bit signed integer variable and initialize it with the smallest possible negative decimal value. (Hint: Refer to integer ranges in Chapter 1.)
+
+† Extern.
+
+7. Declare an unsigned 16-bit integer variable named wArray that uses three initializers.
+
+† Extern.
+
+8. Declare a string variable containing the name of your favorite color. Initialize it as a null-terminated string.
+
+† Extern.
+
+9. Declare an uninitialized array of 50 unsigned doublewords named dArray.
+
+† Extern.
+
+10. Declare a string variable containing the word “TEST” repeated 500 times.
+
+† Extern.
+
+11. Declare an array of 20 unsigned bytes named bArray and initialize all elements to zero.
+
+† Extern.
+
+12. Show the order of individual bytes in memory (lowest to highest) for the following double-word variable: val1 DWORD 87654321h
+
+† 21, 43, 65, 87
+

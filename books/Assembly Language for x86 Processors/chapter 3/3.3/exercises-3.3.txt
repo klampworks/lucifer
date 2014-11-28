@@ -1,0 +1,20 @@
+1. What types of files are produced by the assembler?
+
+† An object file and optionally and listing file aswell.
+
+2. (True/False): The linker extracts assembled procedures from the link library and inserts them in the executable program.
+
+† True.
+
+3. (True/False): When a program’s source code is modified, it must be assembled and linked again before it can be executed with the changes.
+
+† True.
+
+4. Which operating system component reads and executes programs?
+
+† Loader.
+
+5. What types of files is produced by the linker?
+
+† An executable file.
+

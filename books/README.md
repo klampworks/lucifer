@@ -16,6 +16,7 @@ A collection of examples and exercises from books I've read.
 | Modern Perl 		| Chromatic	| 276	| Complete	| Perl
 | More Effective C++	| Scott Meyers		| 337	| Complete | C++
 | Linux System Programming | Robert Love 	| 400	| Complete | Linux & Unix system internals |
+| OCaml from the Very Beginning | John Whitington | 204 | Complete | OCaml, Functional Programming |
 | Practical Perforce | Laura Wingerd | 362 | Complete | Perforce, SCM strategies |
 | Practical Programming in Tcl | Welch | 960 | Complete | TCL, Ancient history |
 | Practical Vim	 | Drew Neil			| 300	| Complete | Vim
@@ -23,9 +24,12 @@ A collection of examples and exercises from books I've read.
 | Realm of Racket |  Felleisen, Barski, Horn | 312 | Complete | Functional programming, Scheme, Racket |
 | Secure Coding |  Mark G | 224 | Complete | |
 | Sketchy LISP	| Nils M Holm | 164 | Complete | Functional programming, Scheme |
+| The Art of Software Security Assessment |  Mark Dowd, John McDonald, Justin Schuh | 1200 | Complete | Security, Source Code Auiditing |
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 
+| The Career Programmer | Christopher Duncan | 300 | Complete | |
 | The Definitive Guide to the Xen Hypervisor | David Chisnall | 320 | In progress | Xen, Operating systems, Computer Architecture | 
 | The Little Schemer | Friedman, Felleisen, Biddy | 216 | Complete | Functional programming, Scheme |
+| The Mythical Man-month | Fred Brooks | 336 | Complete | Software Engineering |
 | The Pragmatic Programmer | Andrew Hunt | 352 | Complete | Software engineering |
 | The Rootkit Arsenal | Bill Blunden | 784 | Complete | Security, Operating systems, API design, Computer Architecture |
 | Why's (Poignant) Guide to Ruby | Why | 176 | Complete | Ruby |

@@ -27,8 +27,9 @@ De-anonymizing Programmers via Code Stylometry \[Aylin Caliskan-Islam, Richard H
 
 Deanonymisation of clients in Bitcoin P2P network \[Alex Biryukov, Dmitry Khovratovich, Ivan Pustogarov\]
 
-Decentralized Anonymous Credentials \[Christina Garman, Matthew Green, Ian Miers
-\]
+Decentralized Anonymous Credentials \[Christina Garman, Matthew Green, Ian Miers\]
+
+Decentralized Peer-to-Peer Network Architecture: Gnutella and Freenet \[Jem E. Berkes\]
 
 Design of a blocking-resistant anonymity system Tor Project technical report, Nov 2006 \[Roger Dingledine, Nick Mathewson - The Tor Project\]
 

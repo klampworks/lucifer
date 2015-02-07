@@ -1,6 +1,8 @@
 Papers
 ======
 
+A Bird’s Eye View on the I2P Anonymous File-sharing Environment \[Juan Pablo Timpanaro, Isabelle Chrisment, Olivier Festor\]
+
 A genetic-algorithm approach to solving crossword puzzles
 
 Algorithms for Constraint- Satisfaction Problems

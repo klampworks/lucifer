@@ -21,6 +21,8 @@ Content and popularity analysis of Tor hidden services
 
 Countering Trusting Trust through Diverse Double-Compiling \[David A. Wheeler\]
 
+De-anonymizing Programmers via Code Stylometry \[Aylin Caliskan-Islam, Richard Harang†, Andrew Liu, Arvind Narayanan, Clare Voss†, Fabian Yamaguchi, and Rachel Greenstadt\]
+
 Deanonymisation of clients in Bitcoin P2P network \[Alex Biryukov, Dmitry Khovratovich, Ivan Pustogarov\]
 
 Decentralized Anonymous Credentials \[Christina Garman, Matthew Green, Ian Miers

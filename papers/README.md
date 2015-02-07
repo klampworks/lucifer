@@ -39,6 +39,8 @@ Dr.Fill: Crosswords and an Implemented Solver for Singly Weighted CSPs
 
 Effective Attacks and Provable Defenses for Website Fingerprinting \[Tao Wang, Xiang Cai, Rishab Nithyanand, Rob Johnson Ian Goldberg\]
 
+Empirical Measurement and Analysis of I2P Routers \[Peipeng Liu, Lihong Wang, Qingfeng Tan, Quangang Li, Xuebin Wang, Jinqiao Shi\]
+
 Encrypting Virtual Memory \[Niels Provos - University of Michigan\]
 
 Formal Analysis of Chaumian Mix Nets with Randomized Partial Checking \[Ralf K ̈ usters, Tomasz Truderung, Andreas Vogt\]

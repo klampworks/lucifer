@@ -11,6 +11,8 @@ All Your iFRAMEs Point to Us \[Niels Provos, Panayiotis Mavrommatis, Moheeb Abu 
 
 An information-theoretic perspective of tf–idf measures
 
+An introduction to steganography methods \[Masoud Nosrati, Ronak Karimi, Mehdi Hariri\]
+
 An LLVM Backend for OCaml \[Colin Benner\]
 
 Anonymity Loves Company: Usability and the Network Effect \[Roger Dingledine and Nick Mathewson - The Free Haven Project\]

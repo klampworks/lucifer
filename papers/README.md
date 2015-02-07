@@ -7,6 +7,8 @@ A genetic-algorithm approach to solving crossword puzzles
 
 Algorithms for Constraint- Satisfaction Problems
 
+All Your iFRAMEs Point to Us \[Niels Provos, Panayiotis Mavrommatis, Moheeb Abu Rajab Fabian Monrose\]
+
 An information-theoretic perspective of tf–idf measures
 
 An LLVM Backend for OCaml \[Colin Benner\]

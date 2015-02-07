@@ -51,6 +51,8 @@ IBM developerWorks: Use your singletons wisely
 
 Modifying an Off-the-Shelf Wireless Router for PDF Ballot Tampering \[Daniel M. Zimmerman, Joseph R. Kiniry - Galois, Inc\]
 
+Monitoring the I2P network \[Juan Pablo Timpanaro, Chrisment Isabelle, Festor Olivier\]
+
 Never Been KIST: Tor’s Congestion Management Blossoms with Kernel-Informed Socket Transport \[Rob Jansen,  John Geddes, Chris Wacek, Micah Sherr, Paul Syverson\]
 
 No Direction Home: The True Cost of Routing Around Decoys \[Amir Houmansadr, Edmund L. Wong, Vitaly Shmatikov\]
@@ -61,8 +63,7 @@ Organizing Programs Without Classes \[David Ungar, Craig Chambers, Bay-wei Chang
 
 Outsmarted – Why Malware Works in face of Antivirus Software \[Matthias Deeg, Sebastian Nerz, Daniel Sauder\]
 
-People Factors in Software Management: Lessons From Comparing Agile and Plan-Driven
-Methods
+People Factors in Software Management: Lessons From Comparing Agile and Plan-Driven Methods
 
 Practical Attacks Against The I2P Network \[Christoph Egger, Johannes Schlumberger,Christopher Kruegel, and Giovanni Vigna\]
 

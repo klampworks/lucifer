@@ -64,6 +64,8 @@ Outsmarted – Why Malware Works in face of Antivirus Software \[Matthias Deeg, 
 People Factors in Software Management: Lessons From Comparing Agile and Plan-Driven
 Methods
 
+Practical Attacks Against The I2P Network \[Christoph Egger, Johannes Schlumberger,Christopher Kruegel, and Giovanni Vigna\]
+
 Preventing Privilege Escalation \[Niels Provos - University of Michigan, Markus Friedl - GeNUA, Peter Honeyman - University of Michigan\]
 
 Re3 : Relay Reliability Reputation for Anonymity Systems \[Anupam Das, Nikita Borisov, Prateek Mittal, Matthew Caesar\]

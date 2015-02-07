@@ -33,6 +33,8 @@ Decentralized Peer-to-Peer Network Architecture: Gnutella and Freenet \[Jem E. B
 
 Design of a blocking-resistant anonymity system Tor Project technical report, Nov 2006 \[Roger Dingledine, Nick Mathewson - The Tor Project\]
 
+Detecting Steganographic Content on the Internet \[Niels Provos, Peter Honeyman\]
+
 Dr.Fill: Crosswords and an Implemented Solver for Singly Weighted CSPs
 
 Effective Attacks and Provable Defenses for Website Fingerprinting \[Tao Wang, Xiang Cai, Rishab Nithyanand, Rob Johnson Ian Goldberg\]

@@ -63,6 +63,8 @@ Solving Crossword Puzzles as Probabilistic Constraint Satisfaction
 
 Solving Crosswords with Proverb
  
+The Challenge of Cross-language Interoperability \[David Chisnall\]
+
 The Sniper Attack: Anonymously Deanonymizing and Disabling the Tor Network \[Rob Jansen, Florian Tschorsch, Aaron Johnson, Bjorn Scheuermann\]
 
 Time, Clocks, and the Ordering of Events in a Distributed System \[Leslie Lamport\]

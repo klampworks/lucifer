@@ -19,6 +19,8 @@ Anonymity Loves Company: Usability and the Network Effect \[Roger Dingledine and
 
 Content and popularity analysis of Tor hidden services
 
+Corrupted DNS Resolution Paths: The Rise of a Malicious Resolution Authority \[David Dagon, Niels Provos, Christopher P. Lee, Wenke Lee\]
+
 Countering Trusting Trust through Diverse Double-Compiling \[David A. Wheeler\]
 
 De-anonymizing Programmers via Code Stylometry \[Aylin Caliskan-Islam, Richard Harang†, Andrew Liu, Arvind Narayanan, Clare Voss†, Fabian Yamaguchi, and Rachel Greenstadt\]

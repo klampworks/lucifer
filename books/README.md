@@ -24,6 +24,7 @@ A collection of examples and exercises from books I've read.
 | Realm of Racket |  Felleisen, Barski, Horn | 312 | Complete | Functional programming, Scheme, Racket |
 | Secure Coding |  Mark G | 224 | Complete | |
 | Sketchy LISP	| Nils M Holm | 164 | Complete | Functional programming, Scheme |
+| Software Exorcism: A Handbook for Debugging and Optimizing Legacy Code | Bill Blunden | 380 | Complete | |
 | The Art of Software Security Assessment |  Mark Dowd, John McDonald, Justin Schuh | 1200 | Complete | Security, Source Code Auiditing |
 | The C++ Programming Language | Bjarne Stroustrup |  1025 | Complete | C++, Object Oriented architecture and design 
 | The Career Programmer | Christopher Duncan | 300 | Complete | |

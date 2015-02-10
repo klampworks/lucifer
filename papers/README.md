@@ -45,6 +45,8 @@ Empirical Measurement and Analysis of I2P Routers \[Peipeng Liu, Lihong Wang, Qi
 
 Encrypting Virtual Memory \[Niels Provos - University of Michigan\]
 
+Freenet: A Distributed Anonymous Information Storage and Retrieval System \[Ian Clarke, Oskar Sandberg, Brandon Wiley, Theodore W. Hong\]
+
 Formal Analysis of Chaumian Mix Nets with Randomized Partial Checking \[Ralf K ̈ usters, Tomasz Truderung, Andreas Vogt\]
 
 IBM developerWorks: A look at aspect-oriented programming

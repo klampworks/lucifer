@@ -37,6 +37,8 @@ Detecting Steganographic Content on the Internet \[Niels Provos, Peter Honeyman\
 
 Dr.Fill: Crosswords and an Implemented Solver for Singly Weighted CSPs
 
+Dynamic-Link Library Hijacking \[Max “RIVAL”\]
+
 Effective Attacks and Provable Defenses for Website Fingerprinting \[Tao Wang, Xiang Cai, Rishab Nithyanand, Rob Johnson Ian Goldberg\]
 
 Empirical Measurement and Analysis of I2P Routers \[Peipeng Liu, Lihong Wang, Qingfeng Tan, Quangang Li, Xuebin Wang, Jinqiao Shi\]

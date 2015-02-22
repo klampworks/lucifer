@@ -63,6 +63,8 @@ Modifying an Off-the-Shelf Wireless Router for PDF Ballot Tampering \[Daniel M. 
 
 Monitoring the I2P network \[Juan Pablo Timpanaro, Chrisment Isabelle, Festor Olivier\]
 
+Neuroscience Meets Cryptography: Designing Crypto Primitives Secure Against Rubber Hose Attacks \[Hristo Bojinov, Daniel Sanchez, Paul Reber, Dan Boneh, Patrick Lincoln\]
+
 Never Been KIST: Tor’s Congestion Management Blossoms with Kernel-Informed Socket Transport \[Rob Jansen,  John Geddes, Chris Wacek, Micah Sherr, Paul Syverson\]
 
 No Direction Home: The True Cost of Routing Around Decoys \[Amir Houmansadr, Edmund L. Wong, Vitaly Shmatikov\]

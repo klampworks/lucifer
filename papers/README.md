@@ -57,6 +57,8 @@ Idioms: Building High Performance Networking Servers using Tcl \[Todd Coram\]
 
 Manufacturing Compromise: The Emergence of Exploit-as-a-Service \[Niels Provos, others.\]
 
+Measuring Freenet in the Wild: Censorship-resilience under Observation \[Stefanie Roos, Benjamin Schiller, Stefan Hacker, Thorsten Strufe\]
+
 Modifying an Off-the-Shelf Wireless Router for PDF Ballot Tampering \[Daniel M. Zimmerman, Joseph R. Kiniry - Galois, Inc\]
 
 Monitoring the I2P network \[Juan Pablo Timpanaro, Chrisment Isabelle, Festor Olivier\]

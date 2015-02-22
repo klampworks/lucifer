@@ -55,6 +55,8 @@ IBM developerWorks: Use your singletons wisely
 
 Idioms: Building High Performance Networking Servers using Tcl \[Todd Coram\]
 
+Implementing IPsec \[Angelos D. Keromytis, John Ioannidis, Jonathan M. Smith\]
+
 Manufacturing Compromise: The Emergence of Exploit-as-a-Service \[Niels Provos, others.\]
 
 Measuring Freenet in the Wild: Censorship-resilience under Observation \[Stefanie Roos, Benjamin Schiller, Stefan Hacker, Thorsten Strufe\]

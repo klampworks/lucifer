@@ -12,6 +12,7 @@ A collection of examples and exercises from books I've read.
 | Code Complete | Steve McConnell | 950 | In progress | Software Engineering |
 |  Effective C++	| Scott Meyers		| 320	| Complete | C++
 |  Expert C Programming  | Peter van der Linden | 290 | Complete | C
+| Hacking the Xbox - An introduction to reverse engineering | Andrew "Bunnie" Huang | 286 | Complete | Electronics, security |
 | MIT Introduction to Algorithms      | Thomas H. Cormen et al      |   1313 | In Progress | Algorithms
 | Modern Perl 		| Chromatic	| 276	| Complete	| Perl
 | More Effective C++	| Scott Meyers		| 337	| Complete | C++
@@ -20,6 +21,7 @@ A collection of examples and exercises from books I've read.
 | Practical Perforce | Laura Wingerd | 362 | Complete | Perforce, SCM strategies |
 | Practical Programming in Tcl | Welch | 960 | Complete | TCL, Ancient history |
 | Practical Vim	 | Drew Neil			| 300	| Complete | Vim
+| Programming Embedded Systems in C and C++ | 200 | Complete | Michael Barr |
 | Programming from the Ground Up | Jonathan Bartlett      |   326 | Complete | x86 assembly
 | Realm of Racket |  Felleisen, Barski, Horn | 312 | Complete | Functional programming, Scheme, Racket |
 | Secure Coding |  Mark G | 224 | Complete | |

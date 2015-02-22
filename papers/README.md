@@ -101,6 +101,8 @@ Timing analysis in low-latency mix networks: attacks and defenses
 
 Tor: The Second-Generation Onion Router \[Roger Dingledine - The Free Haven Project, Nick Mathewson - The Free Haven Project, Paul Syverson - Naval Research Lab\]
 
+The Power of Ten – Rules for Developing Safety Critical Code \[Gerard J. Holzmann\]
+
 Trawling for Tor Hidden Services: Detection, Measurement, Deanonymization
 
 WebCrow : Solving Italian crosswords using the Web

@@ -53,6 +53,8 @@ IBM developerWorks: A look at aspect-oriented programming
 
 IBM developerWorks: Use your singletons wisely
 
+Idioms: Building High Performance Networking Servers using Tcl \[Todd Coram\]
+
 Modifying an Off-the-Shelf Wireless Router for PDF Ballot Tampering \[Daniel M. Zimmerman, Joseph R. Kiniry - Galois, Inc\]
 
 Monitoring the I2P network \[Juan Pablo Timpanaro, Chrisment Isabelle, Festor Olivier\]

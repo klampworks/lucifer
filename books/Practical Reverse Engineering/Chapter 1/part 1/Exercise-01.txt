@@ -1,0 +1,60 @@
+1. This function uses a combination SCAS and STOS to do its work. First,
+explain what is the type of the [EBP+8] and [EBP+C] in line 1 and 8, respectively. Next, explain what this snippet does. 
+
+01: 8B 7D 08 mov edi, [ebp+8]
+02: 8B D7 mov edx, edi
+03: 33 C0 xor eax, eax
+04: 83 C9 FF or ecx, 0FFFFFFFFh
+05: F2 AE repne scasb
+06: 83 C1 02 add ecx, 2
+07: F7 D9 neg ecx
+08: 8A 45 0C mov al, [ebp+0Ch]
+09: 8B FA mov edi, edx
+10: F3 AA rep stosb
+11: 8B C2 mov eax, edx 
+
+The contents of edi after line 1 is a pointer copied from something on the
+stack.  
+
+The contents of al is a single octet value copied from somewhere on the stack.
+
+; edi is a pointer lifted from the stack.
+01: 8B 7D 08 mov edi, [ebp+8]
+
+; Make a copy of the original pointer because the scas 
+; instruction will modify edi.
+02: 8B D7 mov edx, edi
+
+; set eax to 0
+03: 33 C0 xor eax, eax
+
+; Set ecx to -1.
+04: 83 C9 FF or ecx, 0FFFFFFFFh
+
+; Keep incrementing edi and comparing the value edi 
+; points to with ax until they are equal (ax is 0), or
+; theortically until edi itself equals ecx.
+05: F2 AE repne scasb
+
+; It seems that ecx was decremented by an amount equal to the
+; array length. This addition is to compensate for the nul byte
+; and the fact that the count started at -1 instead of 0.
+06: 83 C1 02 add ecx, 2
+
+; Negate the result so that it now contains the length of the array.
+07: F7 D9 neg ecx
+
+; Copy a value on the stack into the single octet register al.
+08: 8A 45 0C mov al, [ebp+0Ch]
+
+; Restore the saved value of edi.
+09: 8B FA mov edi, edx
+
+; Write the value of ax (0) to the address edi points to 
+; and incremenet edi until edit equals ecx
+10: F3 AA rep stosb
+
+; Copy the saved array pointer to eax. Possibly the function return value.
+11: 8B C2 mov eax, edx 
+
+It seems that the purpose of this code is to zero out a string.

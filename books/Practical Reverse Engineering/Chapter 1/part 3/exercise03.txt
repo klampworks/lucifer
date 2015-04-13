@@ -1,0 +1,6 @@
+3. In some of the assembly listings, the function name has a @ prefix followed
+by a number. Explain when and why this decoration exists. 
+
+This convention is used to indicate how many arguments a function is
+expecting. The number represents the number of bytes this function takes as
+arguments.

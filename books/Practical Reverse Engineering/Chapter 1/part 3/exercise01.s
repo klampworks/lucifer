@@ -21,24 +21,37 @@ push edi
 ; http://x86.renejeschke.de/html/file_module_x86_id_295.html
 sidt fword ptr [ebp-8]
 
+; Copy the IDT base address we received in the previous instruction into eax.
 mov eax, [ebp-6]
+
+; Check that the IDT base address falls within the given range.
+; Jump to loc_10001C88 if not.
 cmp eax, 8003F400h
 jbe short loc_10001C88 (line 18)
 cmp eax, 80047400h
 jnb short loc_10001C88 (line 18)
+
+; IDT base address is in the given range, return 0.
 xor eax, eax
 pop edi
 mov esp, ebp
 pop ebp
 retn 0Ch
+
 loc_10001C88:
+
+; Clear eax.
 xor eax, eax
+
+; Set the rep count to 0x49.
 mov ecx, 49h
-lea edi, [ebp-12Ch]
-mov dword ptr [ebp-130h], 0
+
+lea edi, [ebp-12Ch]         ; Second argument
+mov dword ptr [ebp-130h], 0 ; Set the start (or end?) of the local storage to 0.
 push eax
 push 2
 rep stosd
+
 call CreateToolhelp32Snapshot
 mov edi, eax
 cmp edi, 0FFFFFFFFh

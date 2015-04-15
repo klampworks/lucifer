@@ -48,12 +48,24 @@ mov ecx, 49h
 
 lea edi, [ebp-12Ch]         ; Second argument
 mov dword ptr [ebp-130h], 0 ; Set the start (or end?) of the local storage to 0.
-push eax
+push eax                    ; 0
 push 2
+
+; Store String Double
+; http://x86.renejeschke.de/html/file_module_x86_id_306.html
+; Store eax at address edi.
+; Set a chunk of the stack local storage to 0.
 rep stosd
 
+; Arguments
+; th32ProcessID 0 (ignored)
+; dwFlags       2 (Includes all processes in the system in the snapshot). 
 call CreateToolhelp32Snapshot
+
+; Copy the returned handle into edi.
 mov edi, eax
+
+; Return zero if the handle is equal to -1 (INVALID_HANDLE_VALUE).
 cmp edi, 0FFFFFFFFh
 jnz short loc_10001CB9 (line 35)
 xor eax, eax
@@ -61,15 +73,26 @@ pop edi
 mov esp, ebp
 pop ebp
 retn 0Ch
+
 loc_10001CB9:
+
 lea eax, [ebp-130h]
-push esi
-push eax
-push edi
+push esi    ; ???
+push eax    ; Address of local varable.
+push edi    ; Handle to snapshot.
+
+; Set the dwSize member of this struct to 0x128.
 mov dword ptr [ebp-130h], 128h
+
+; Arguments:
+; hSnapshot         edi, handle to snapshot
+; LPPROCESSENTRY32  Address of local variable.
 call Process32First
+
 test eax, eax
 jz short loc_10001D24 (line 70)
+; If return value was not 0 do this...
+
 mov esi, ds:_stricmp
 lea ecx, [ebp-10Ch]
 push 10007C50h
@@ -96,6 +119,7 @@ loc_10001D16:
 mov eax, [ebp-118h]
 mov ecx, [ebp-128h]
 jmp short loc_10001D2A (line 73)
+
 loc_10001D24:
 mov eax, [ebp+0Ch]
 mov ecx, [ebp+0Ch]

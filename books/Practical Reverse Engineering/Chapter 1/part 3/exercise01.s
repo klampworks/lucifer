@@ -93,21 +93,38 @@ test eax, eax
 jz short loc_10001D24 (line 70)
 ; If return value was not 0 do this...
 
+; Copy the address of stricmp into esi.
 mov esi, ds:_stricmp
+
+; Copy the address of a field in the the local LPPROCESSENTRY32 struct.
+; This appears to be somewhere in the middle of the szExeFile field.
 lea ecx, [ebp-10Ch]
-push 10007C50h
-push ecx
+
+; Do a case-insensitive string comparison.
+push 10007C50h      ; ??? Address of an unknown string.
+push ecx            ; Process path inside LPPROCESSENTRY32 structure.
 call esi ; _stricmp
+
+; Clean up the stack after the stricmp call. 
 add esp, 8
+
 test eax, eax
 jz short loc_10001D16 (line 66)
+
+; If the strings were not equal do this...
 loc_10001CF0:
+
+; Get the next process
 lea edx, [ebp-130h]
 push edx
 push edi
 call Process32Next
+
 test eax, eax
 jz short loc_10001D24 (line 70)
+; If the returned handle is not zero do this...
+
+; Do the string comparison again.
 lea eax, [ebp-10Ch]
 push 10007C50h
 push eax
@@ -115,14 +132,24 @@ call esi ; _stricmp
 add esp, 8
 test eax, eax
 jnz short loc_10001CF0 (line 52)
+; Loop
+
 loc_10001D16:
-mov eax, [ebp-118h]
-mov ecx, [ebp-128h]
+; String comparison matched...
+
+; ebp-130h is the start of the struct.
+; ebp-128h is 8 bytes in; the third field.
+; ebp-118h is 24 bytes in; the seventh field.
+mov eax, [ebp-118h] ; th32ParentProcessID
+mov ecx, [ebp-128h] ; th32ProcessID
 jmp short loc_10001D2A (line 73)
 
 loc_10001D24:
+; Process was not found.
+; Zero eax and ecx.
 mov eax, [ebp+0Ch]
 mov ecx, [ebp+0Ch]
+
 loc_10001D2A:
 cmp eax, ecx
 pop esi

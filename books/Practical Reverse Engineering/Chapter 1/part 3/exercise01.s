@@ -152,24 +152,41 @@ mov ecx, [ebp+0Ch]
 
 loc_10001D2A:
 cmp eax, ecx
-pop esi
+
+pop esi     ; ???
+
 jnz short loc_10001D38 (line 82)
+; Prcoess id and Parent process id are the same.
+
 xor eax, eax
-pop edi
+pop edi     ; ???
+
+; Return 0.
 mov esp, ebp
 pop ebp
 retn 0Ch
+
 loc_10001D38:
+; Process id and parent id are not the same.
+
+; This is the second argument to this function.
+; If we assume that the function is dllMain then this argument is called
+; fdwReason.
 mov eax, [ebp+0Ch]
+
 dec eax
 jnz short loc_10001D53 (line 93)
-push 0
-push 0
-push 0
-push 100032D0h
-push 0
-push 0
+
+; Argument was 1.
+push 0          ; lpThreadId            - Pointer to where to store thread id.
+push 0          ; dwCreationFlags       - Thread runs imiidiatly after creation.
+push 0          ; lpParameter           - Pointer to variable for thread.
+push 100032D0h  ; lpStartAddress        - Code to execute.
+push 0          ; dwStackSize           - Default size for executable.
+push 0          ; lpThreadAttributes    - Returned handle cannot be inherited.
 call ds:CreateThread
+; Return value of CreateThread seems to be ignored.
+
 loc_10001D53:
 mov eax, 1
 pop edi

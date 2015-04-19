@@ -188,10 +188,13 @@ call ds:CreateThread
 ; Return value of CreateThread seems to be ignored.
 
 loc_10001D53:
+
 mov eax, 1
 pop edi
 mov esp, ebp
 pop ebp
+
+; Pop 12 bytes off th stack (the arguments) and return.
 retn 0Ch
 _DllMain@12 endp 
 

@@ -44,6 +44,10 @@ loc_10001C88:
 xor eax, eax
 
 ; Set the rep count to 0x49.
+; Note that the LPPROCESSENTRY32 struct contains 9, 4 byte fields and 
+; 1 256 bit (64 byte) array.
+; 9 + 64 = 73 = 0x49.
+; This is the number of 4 byte values required to fill up the struct.
 mov ecx, 49h
 
 lea edi, [ebp-12Ch]         ; Second argument

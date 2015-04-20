@@ -11,5 +11,10 @@ BOOL __stdcall DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     struct idtr_t idtr;
     __sidt(&idtr);
 
+    if (idtr.base < 0x8003F400 && idtr.base > 0x80047400)
+        return 0; 
+
+    
+
 }
 

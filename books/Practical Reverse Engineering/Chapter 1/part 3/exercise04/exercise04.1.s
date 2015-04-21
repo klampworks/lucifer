@@ -1,5 +1,5 @@
 section .data
-msg db "Hello World!",0x0a
+msg db "Hello World!",0x0
 len equ $-msg
 
 section .text
@@ -18,16 +18,17 @@ strlen:
     push ebp
     mov ebp, esp
 
-    mov ebx, [ebp+8]
+    mov eax, [ebp+8]
 
     st:
-        mov ecx, [ebx]
-        cmp ecx, 0
+        mov cl, BYTE [eax]
+        cmp cl, 0
         jz en
-        inc ebx
+        inc eax
+        jmp st
     en:
         
-    mov eax, [ebp+8]
+    mov ebx, [ebp+8]
     sub eax, ebx
 
     mov esp, ebp

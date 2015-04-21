@@ -101,7 +101,8 @@ jz short loc_10001D24 (line 70)
 mov esi, ds:_stricmp
 
 ; Copy the address of a field in the the local LPPROCESSENTRY32 struct.
-; This appears to be somewhere in the middle of the szExeFile field.
+; This appears to be the 9th field. (0x130 - 0x130 = 36; 36 / 4 = 9) 
+; This appears to be the szExeFile field.
 lea ecx, [ebp-10Ch]
 
 ; Do a case-insensitive string comparison.

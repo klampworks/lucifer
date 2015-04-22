@@ -23,25 +23,20 @@ BOOL __stdcall DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
     if (handle == -1)
         return 0;
 
-    if (Process32First(h, &p) != 0) {
-        if (stricmp(p.szExeFile, unknown_string) != 0) {
+    int tmp = Process32First(h, &p);
+    do {
+        if (stricmp(p.szExeFile, unknown_string) == 0)
+            break;
 
-            s:
-            if (Process32Next(h, &p) != 0) {
-                if (stricmp(p.szExeFile, unknown_string) != 0) {
-                    goto s;
-                } else {
-                    goto strmatch;
-                }
-            } else {
-                goto noproc;
-            }
-    } else {
-        goto noproc;
-    }
-                
-                
-           
+        tmp = Process32Next(h, &p);
+    } while (tmp != 0);
 
+    if (tmp != 0 && p.th32ParentProcessID == p.th32ProcessID)
+        return 0;
+        
+    if (fdwReason == DLL_PROCESS_ATTACH)
+        CreateThread(0, 0, "???", 0, 0, 0);
+                
+    return 1;
 }
 

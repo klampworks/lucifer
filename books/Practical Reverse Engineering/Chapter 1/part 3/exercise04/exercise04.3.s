@@ -1,5 +1,6 @@
 section .data
 msg db "Hello World!",0
+len equ $ - msg
 newmsg db "Idiot"
 
 section .text
@@ -7,10 +8,12 @@ section .text
 
 _start:
 
-    push 5
-    push newmsg
-    push msg
-    call memcpy
+;    push 5
+;    push newmsg
+;    push msg
+;    call memcpy
+
+    call write_msg
 
     mov ebx, eax
     mov eax, 1
@@ -40,3 +43,18 @@ memcpy:
     mov esp, ebp
     pop ebp
     ret 4
+
+write_msg:
+    push ebp
+    mov ebp, esp
+
+    mov edx, len
+    mov ecx, msg
+    mov ebx, 1
+    mov eax, 4
+    int 0x80
+
+    mov esp, ebp
+    pop ebp
+    ret 0
+    

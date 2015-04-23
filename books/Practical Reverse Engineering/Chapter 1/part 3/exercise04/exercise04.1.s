@@ -7,7 +7,7 @@ section .text
 
 _start:
 
-    call strlen
+    push msg
     call strlen
     mov ebx, 0
     mov eax, 1
@@ -19,7 +19,7 @@ strlen:
     mov ebp, esp
 
     mov ebx, 1
-    mov ecx, msg
+    mov ecx, [ebp+8]
     mov edx, len
     mov eax, 4
     int 0x80

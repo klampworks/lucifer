@@ -8,10 +8,10 @@ section .text
 
 _start:
 
-;    push 5
-;    push newmsg
-;    push msg
-;    call memcpy
+    push 5
+    push newmsg
+    push msg
+    call memcpy
 
     call write_msg
 
@@ -35,6 +35,8 @@ memcpy:
         mov dl, BYTE [ebx]
         mov [eax], dl
         dec ecx
+	inc ebx
+	inc eax
         jmp st
 
     en:

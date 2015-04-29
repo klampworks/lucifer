@@ -21,6 +21,27 @@ _start:
     mov eax, 1
     int 0x80
 
+strcmp:
+    push ebp
+    mov ebp, esp
+
+    mov eax, [ebp+8]
+    mov ebx, [ebp+0xc]
+
+    st:
+   	cmp al, bl 
+
+    eq:
+
+    lt:
+
+    gt:
+
+
+    mov esp, ebp
+    pop ebp
+    ret 8
+
 write_msg:
     push ebp
     mov ebp, esp

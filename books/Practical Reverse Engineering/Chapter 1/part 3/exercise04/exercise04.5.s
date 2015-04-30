@@ -17,6 +17,10 @@ _start:
     push str2
     call write_msg
 
+    push str1
+    push str2
+    call strcmp
+
     mov ebx, eax
     mov eax, 1
     int 0x80
@@ -25,18 +29,42 @@ strcmp:
     push ebp
     mov ebp, esp
 
-    mov eax, [ebp+8]
-    mov ebx, [ebp+0xc]
+    mov esi, [ebp+8]
+    mov edi, [ebp+0xc]
 
     st:
-   	cmp al, bl 
+    	mov cl, BYTE [esi]
+    	mov dl, BYTE [edi]
 
-    eq:
+	cmp cl, 0
+	setz al
+	cmp dl, 0
+	setz ah
 
+	and al, ah
+	je eq
+
+	cmp al, 0
+	je lt
+
+	cmp ah, 0
+	je gt
+
+	cmp cl, dl
+	jl lt 
+	jg gt
+
+	inc esi
+	inc edi
+	jmp st
     lt:
-
+	mov eax, -1
+	jmp en
     gt:
-
+    	mov eax, 1
+    eq:
+    	mov eax, 0
+    en:
 
     mov esp, ebp
     pop ebp

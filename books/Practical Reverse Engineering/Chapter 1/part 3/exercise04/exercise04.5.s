@@ -1,7 +1,7 @@
 section .data
-str1 db "Hello",0xa,0
+str1 db "hello",0xa,0
 len1 equ $ - str1
-str2 db "hello",0xa,0
+str2 db "Hello",0xa,0
 len2 equ $ - str2
 
 section .text
@@ -41,13 +41,15 @@ strcmp:
 	cmp dl, 0
 	setz ah
 
-	and al, ah
+	mov bh, ah
+	and bh, al
+	cmp bh, 1
 	je eq
 
-	cmp al, 0
+	cmp al, 1
 	je lt
 
-	cmp ah, 0
+	cmp ah, 1
 	je gt
 
 	cmp cl, dl
@@ -62,6 +64,7 @@ strcmp:
 	jmp en
     gt:
     	mov eax, 1
+	jmp en
     eq:
     	mov eax, 0
     en:

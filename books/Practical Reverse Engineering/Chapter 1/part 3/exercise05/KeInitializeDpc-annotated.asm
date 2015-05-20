@@ -1,4 +1,7 @@
 lkd> uf KeInitializeDpc
+
+; Function takes three, four octet pointer arguments.
+; Uses arguments 2 and 3 and some hardcoded values to initialise the first.
 nt!KeInitializeDpc:
 
 ; no op
@@ -14,10 +17,10 @@ nt!KeInitializeDpc:
 ; Zero ecx
 828bad00 33c9            xor     ecx,ecx
 
-; Zero 4 bytes starting at eax + 0x1c
+; Zero 4 bytes starting at eax + 0x1c (28 octets into the struct).
 828bad02 83601c00        and     dword ptr [eax+1Ch],0
 
-; Write 0x13 to the address pointed to be the second function argument.
+; Write 0x13 (19) to the address pointed to be the second function argument.
 828bad06 c60013          mov     byte ptr [eax],13h
 
 ; Write 1 to the octet after eax.
@@ -32,8 +35,10 @@ nt!KeInitializeDpc:
 ; Copy value of second function argument into the first at offset 12.
 828bad14 89480c          mov     dword ptr [eax+0Ch],ecx
 
-
+; Copy third function argument into the first at offset 16.
 828bad17 8b4d10          mov     ecx,dword ptr [ebp+10h]
 828bad1a 894810          mov     dword ptr [eax+10h],ecx
+
+; End of function.
 828bad1d 5d              pop     ebp
 828bad1e c20c00          ret     0Ch

@@ -24,9 +24,9 @@ nt!KeInitializeApc:
 828c9dda 83fa02          cmp     edx,2
 828c9ddd 7506            jne     nt!KeInitializeApc+0x20 (828c9de5)
 
-; If third argument is not 2 then this branch is taken.
+; If third argument is 2 then this branch is taken.
 nt!KeInitializeApc+0x1a:
-828c9ddf 8a9134010000    mov     dl,byte ptr [ecx+134h]
+    828c9ddf 8a9134010000    mov     dl,byte ptr [ecx+134h]
 
 nt!KeInitializeApc+0x20:
 828c9de5 894808          mov     dword ptr [eax+8],ecx
@@ -56,22 +56,22 @@ nt!KeInitializeApc+0x20:
 ; This branch is taken if the sixth function argument was not zero.
 nt!KeInitializeApc+0x3e:
 
-; Seventh function argument..
-828c9e03 8a4d20          mov     cl,byte ptr [ebp+20h]
-828c9e06 88482d          mov     byte ptr [eax+2Dh],cl
+    ; Seventh function argument..
+    828c9e03 8a4d20          mov     cl,byte ptr [ebp+20h]
+    828c9e06 88482d          mov     byte ptr [eax+2Dh],cl
 
-; Eighth function argumnet.
-828c9e09 8b4d24          mov     ecx,dword ptr [ebp+24h]
-828c9e0c 894820          mov     dword ptr [eax+20h],ecx
+    ; Eighth function argumnet.
+    828c9e09 8b4d24          mov     ecx,dword ptr [ebp+24h]
+    828c9e0c 894820          mov     dword ptr [eax+20h],ecx
 
-828c9e0f eb06            jmp     nt!KeInitializeApc+0x52 (828c9e17)
+    828c9e0f eb06            jmp     nt!KeInitializeApc+0x52 (828c9e17)
 
 ; This branch is taken only is the sixth argument was zero.
 nt!KeInitializeApc+0x4c:
 
-; dl and edx are zero.
-828c9e11 88502d          mov     byte ptr [eax+2Dh],dl
-828c9e14 895020          mov     dword ptr [eax+20h],edx
+    ; dl and edx are zero.
+    828c9e11 88502d          mov     byte ptr [eax+2Dh],dl
+    828c9e14 895020          mov     dword ptr [eax+20h],edx
 
 nt!KeInitializeApc+0x52:
 

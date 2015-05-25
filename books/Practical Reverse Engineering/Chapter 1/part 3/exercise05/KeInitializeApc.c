@@ -1,9 +1,20 @@
 typedef struct {
-
+    uint8_t one;    /* 0 */
+    void *three;    /* 8 */
+    uint8_t two;    /* 16 */
+    uint32_t four;  /* 20 */
+    uint32_t six;   /* 24 */
+    uint32_t seven; /* 28 */
+    uint32_t nine;  /* 32 */
+    uint64_t gap;
+    uint8_t five;   /* 44 */
+    uint8_t eight;  /* 45 */
+    uint8_t nine;   /* 46 */
 } ARG1_T;
 
 typedef struct {
-
+    uint32_t gap[77];
+    uint8_t one;
 } ARG2_T;
 
 ARG1_T* KeInitializeApc(ARG1_T *arg1, ARG2_T *arg2, uint8_t arg3)
@@ -24,13 +35,13 @@ ARG1_T* KeInitializeApc(ARG1_T *arg1, ARG2_T *arg2, uint8_t arg3)
     arg1->seven = (uint32_t)arg6; /* Offset 28 */
 
     if (arg6 != 0) {
-        arg1->seven = (uint8_t)arg7; /* Offset 45 */
-        arg1->eight = (uint32_t)arg8; /* Offset 32 */
+        arg1->eight = (uint8_t)arg7; /* Offset 45 */
+        arg1->nine = (uint32_t)arg8; /* Offset 32 */
     } else {
-        arg1->seven = (uint8_t)0; /* Offset 45 */
-        arg1->eight = (uint32_t)0; /* Offset 32 */
+        arg1->eight = (uint8_t)0; /* Offset 45 */
+        arg1->nine = (uint32_t)0; /* Offset 32 */
     }
 
-    arg1->nine = (uint8_t)0; /* Offset 46 */
+    arg1->ten = (uint8_t)0; /* Offset 46 */
     return arg1;
 }

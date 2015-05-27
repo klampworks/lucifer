@@ -48,19 +48,19 @@ nt!RtlValidateUnicodeString+0x23:
     82833ec2 7520            jne     nt!RtlValidateUnicodeString+0x4c (82833ee4)
 
 nt!RtlValidateUnicodeString+0x2c:
-    ; If the (dx) the first 1 octet value of eax is greater than 
-    ; (cx) the third 1 octet value of eax then goto end.
+    ; This does not make much sense. If the copy is zero extended then
+    ; dx and cx cannot be anything but zero.
     82833ec4 663bd1          cmp     dx,cx
     82833ec7 771b            ja      nt!RtlValidateUnicodeString+0x4c (82833ee4)
 
 nt!RtlValidateUnicodeString+0x31:
-    ; Save the original value of edi, compare cx (second arg+2) with 0xfffe.
+    ; Save the original value of edi, compare cx (0?) with 0xfffe(-2).
     82833ec9 57              push    edi
     82833eca bffeff0000      mov     edi,0FFFEh
     82833ecf 663bcf          cmp     cx,di
     82833ed2 5f              pop     edi
 
-    ; Goto end if cs is greater than -2.
+    ; Goto end if cx is greater than -2.
     82833ed3 770f            ja      nt!RtlValidateUnicodeString+0x4c (82833ee4)
 
 nt!RtlValidateUnicodeString+0x3d:

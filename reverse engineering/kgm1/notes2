@@ -1,0 +1,196 @@
+################################################################################
+ These are raw notes and may be incomplete, misleading and inaccurate
+################################################################################
+
+    †  r2 kgm1
+    [0x08048380]> aaa
+    [x] Analyze all flags starting with sym. and entry0 (aa)
+    [x] Analyze len bytes of instructions for references (aar)
+    [x] Analyze function calls (aac)
+    [ ] [*] Use -AA or aaaa to perform additional experimental analysis.
+    [x] Constructing a function name for fcn.* and sym.func.* functions (aan))
+    [0x08048380]> pdf @ main
+    ...
+
+The first interesting block of code is this:
+
+    0x0804845a      8d5c2414       lea ebx, [esp + local_14h]  ; 0x14 ; 20
+    0x0804845e      891c24         mov dword [esp], ebx
+    0x08048461      e8d2feffff     call sym.imp.fgets         ; char *fgets(char *s, int size, FILE *stream);
+    0x08048466      891c24         mov dword [esp], ebx
+    0x08048469      e8eafeffff     call sym.imp.strlen        ; size_t strlen(const char *s);
+    0x0804846e      83f80a         cmp eax, 0xa
+    0x08048471      755c           jne 0x80484cf
+
+This tells us that `local_14h` is where the input string is stored.
+
+In decimal, `0xa` is `10`. A correct serial must be exactly 10 characters (`cmp eax, 0xa`, `jne ...`). A small caveat to note here, when we type the serial and press the return key, a newline character is appended to the serial and the `fgets` function includes this newline character in the string it returns.
+
+    † man 3 fgets
+    ...
+    fgets() reads in at most one less than size characters from stream
+           and  stores  them  into the buffer pointed to by s.  Reading stops
+           after an EOF or a newline.  If a newline is  read,  it  is  stored
+           into  the  buffer.
+
+This means we only need to guess 9 characters.
+
+The next interesting block of code is this:
+
+    0x08048473      ba01000000     mov edx, 1
+    0x08048478      8d4c2414       lea ecx, [esp + local_14h]  ; 0x14
+    ; JMP XREF from 0x0804848d (main)
+    0x0804847c      0fb682079704.  movzx eax, byte [edx + 0x8049707] ; [0x8049707:1]=8
+    0x08048483      30440aff       xor byte [edx + ecx - 1], al
+    0x08048487      83c201         add edx, 1
+    0x0804848a      83fa09         cmp edx, 9
+    0x0804848d      75ed           jne 0x804847c
+
+The final 3 instructions (`add edx, 1`, `cmd edx, 9`, `jne ...`) tell us that this is a loop and it executes 8 times (because the counter starts at 1 and stops when it reaches 9).
+
+The body of the loop is performing an `xor` operation on the first 8 characters of the input. The loop counter is being added to a fixed memory location (`0x8049707`) each time.
+
+We can find out what is at address `0x8049707` by using the `px` command. Adding `l 1` limits the output to `1` line, since the string is only 9 characters anyway.
+
+    [0x08048380]> pxl 1 @0x8049707
+    - offset -   0 1  2 3  4 5  6 7  8 9  A B  C D  E F  0123456789ABCDEF
+    0x08049707  0845 36ab c8cc 11e3 7a00 0000 0000 4743  .E6.....z.....GC
+
+We can express this block with the following C code:
+
+    const unsigned char hardcoded[] = {0x08, 0x45, 0x36, 0xab, 0xc8, 0xcc,
+      0x11, 0xe3, 0x7a, 0x00};
+
+    for (int i = 1; i < 10; ++i) {
+      input[i - 1] ^= hardcoded[i];
+    }
+
+Note that because the loop counter starts at 1, the first value of the hardcoded string (`0x08`) is not actually used.
+
+The next interesting block of code is this:
+
+    0x0804848f      b900000000     mov ecx, 0
+    0x08048494      b200           mov dl, 0
+    0x08048496      8d5c2414       lea ebx, [esp + local_14h]  ; 0x14
+    ; JMP XREF from 0x080484a6 (main)
+    0x0804849a      0fbe041a       movsx eax, byte [edx + ebx]
+    0x0804849e      01c1           add ecx, eax
+    0x080484a0      83c201         add edx, 1
+    0x080484a3      83fa08         cmp edx, 8
+    0x080484a6      75f2           jne 0x804849a
+
+Again, the last 3 instructions indicate that this is a loop, although this one only executes 7 times.
+
+The body of this loop is simply adding together the first 7 characters of the input string (after being `xor`ed).
+
+This can be expressed with the following C code:
+
+    int j = 0; // ecx
+    for (int i = 0; i < 8; ++i) {
+      j += input[i];
+    }
+
+The final interesting block of code is this:
+
+    0x080484a8      0fbe54241c     movsx edx, byte [esp + local_1ch] ; [0x1c:1]=52
+    0x080484ad      0fb6c1         movzx eax, cl
+    0x080484b0      39c2           cmp edx, eax
+    0x080484b2      751b           jne 0x80484cf
+    0x080484b4      8d429f         lea eax, [edx - 0x61]
+    0x080484b7      83f819         cmp eax, 0x19
+    0x080484ba      7713           ja 0x80484cf
+    0x080484bc      c70424d28504.  mov dword [esp], str.Good_key___n
+
+Unfortunately Radare is being a little confusing here because there is no `local_1ch` variable. Remember that our input string is stored at `local_14h` and is 10 characters long (actually the buffer is 16 characters). This means the memory location `local_1ch` is inside this input buffer because `0x1c - 0x14 = 0x08`, and `8` is smaller than `10` (or `16`). That means `local_`ch` is referring to the `9th` character in the input string.
+
+The value calculated by the previous loop, adding the first 8 characters together, is compared with the 9th character of the input string and must match. Additionally, this value must be greater than `0x61` but smaller than `0x7a`. And that's it.
+
+This final block can be represented by the following C code:
+
+    /* We only want the bottom 8 bits because we will be
+     * comparing it to an 8 bit byte.
+     * This is effectively what `movzx eax, cl` does
+     */
+    j &= 0xff;
+
+    //local_1ch must be the 9th character
+    //0x1c - 0x14 = 8
+    if (j != input[8]) {
+      return bad_key;
+    }
+
+    if (0x19 > j - 0x61) {
+      return bad_key;
+    }
+
+    return good_key;
+
+In summery:
+
+* The input string must be exactly 10 characters (including a line feed character at the end).
+* The first 8 characters are `xor`ed with a hardcoded string (`{0x45, 0x36, 0xab, 0xc8, 0xcc, 0x11, 0xe3, 0x7a}`)
+* We have a variable `j` which is calculated by summing the first 7 characters of the (`xor`ed) input string together.
+* The 9th character of the input must be equal to the bottom 8 bits of `j`
+* Additionally `j - 0x61` must be smaller than `0x19`. In other words, `j` must be greater than `0x61` but smaller than `0x7a`.
+* The 10th character of the serial is always the line feed character and ignored by the algorithm.
+
+So character 10 is always `\n` and character 9 is calculated from the first 8. One way to find a valid serial is to generate random values to the first 8 characters and then run it through the algorithm until something passes as a valid serial. A bruteforce essentially.
+
+Here is an implementation in C:
+
+    #include <stdio.h>
+    #include <string.h>
+    #include <stdlib.h>
+
+    int find_j(const char *in)
+    {
+      char *input = strdup(in);
+
+      const unsigned char hardcoded[] = {0x08, 0x45, 0x36, 0xab, 0xc8, 0xcc,
+        0x11, 0xe3, 0x7a, 0x00};
+
+      for (int i = 1; i < 10; ++i) {
+        input[i - 1] ^= hardcoded[i];
+      }
+
+      int j = 0;
+      for (int i = 0; i < 8; ++i) {
+        j += input[i];
+      }
+
+      j &= 0xff;
+      free(input);
+      return j;
+    }
+
+    int main()
+    {
+      char input[] = "aaaaaaaaa";
+
+      int j = 0;
+      for (int a = '!'; a < '~'; ++a) {
+        for (int b = '!'; b < '~'; ++b) {
+          input[0] = a;
+          input[1] = b;
+
+          j = find_j(input);
+          if (j > 0x61 && j < 0x61 + 0x19 ) {
+            input[8] = j;
+            printf("Found a key:\n%s\n", input);
+            exit(0);
+          }
+        }
+      }
+      printf("sorry\n");
+    }
+
+Example output:
+
+    †  clang keygen.c
+    †  ./a.out
+    Found a key:
+    @paaaaaax
+    †  ./kgm1
+    KeyGenMe1 by ascii for http://crackmes.de/
+    Key: @paaaaaax
+    Good key !

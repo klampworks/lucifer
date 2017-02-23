@@ -1,0 +1,160 @@
+################################################################################
+ These are raw notes and may be incomplete, misleading and inaccurate
+################################################################################
+
+†  r2 kgm1
+[0x08048380]> aaa
+[x] Analyze all flags starting with sym. and entry0 (aa)
+[x] Analyze len bytes of instructions for references (aar)
+[x] Analyze function calls (aac)
+[ ] [*] Use -AA or aaaa to perform additional experimental analysis.
+[x] Constructing a function name for fcn.* and sym.func.* functions (aan))
+[0x08048380]> s @main
+0x8048422
+[0x08048380]> s main
+[0x08048422]> pdf
+
+0x08048461      e8d2feffff     call sym.imp.fgets         ; char *fgets(char *s, int size, FILE *stream);
+0x08048466      891c24         mov dword [esp], ebx
+0x08048469      e8eafeffff     call sym.imp.strlen        ; size_t strlen(const char *s);
+0x0804846e      83f80a         cmp eax, 0xa
+0x08048471      755c           jne 0x80484cf
+
+Serial must be 10 characters.
+
+local_8h = stdin
+local_4h = 0x10 (int?)
+local_14h = char*
+
+fgets(char *, int, FILE*)
+
+edx = 1
+ecx = input
+
+do {
+  eax = (0x8049707 + edx) & 8
+  input[edx - 1] ^= eax
+  edx += 1
+} while (edx != 9);
+
+ecx = 0
+edx &= (~0xff); //???
+ebx = input
+
+do {
+  eax = ebx[edx];
+  ecx += eax;
+  edx += 1;
+} while (edx != 8);
+
+//local_1ch must be the 9th character
+//0x1c - 0x14 = 8
+edx = input[8]
+eax = ecx & 8
+
+if (edx != eax) {
+  bad key
+}
+eax = edx - 0x61
+
+if (eax < 0x19) {
+  bad key
+}
+
+good key
+
+################################################################################
+
+--------------------------------------------------------------------------------
+0x0804847c      0fb682079704.  movzx eax, byte [edx + 0x8049707] ; [0x8049707:1]=8
+
+[0x08048622]> px @0x8049707
+- offset -   0 1  2 3  4 5  6 7  8 9  A B  C D  E F  0123456789ABCDEF
+0x08049707  0845 36ab c8cc 11e3 7a00 0000 0000 4743  .E6.....z.....GC
+0x08049717  433a 2028 474e 5529 2034 2e32 2e33 2032  C: (GNU) 4.2.3 2
+0x08049727  3030 3731 3031 3420 2870 7265 7265 6c65  0071014 (prerele
+0x08049737  6173 6529 2028 4465 6269 616e 2034 2e32  ase) (Debian 4.2
+0x08049747  2e32 2d33 2900 0047 4343 3a20 2847 4e55  .2-3)..GCC: (GNU
+0x08049757  2920 342e 322e 3320 3230 3037 3130 3134  ) 4.2.3 20071014
+0x08049767  2028 7072 6572 656c 6561 7365 2920 2844   (prerelease) (D
+0x08049777  6562 6961 6e20 342e 322e 322d 3329 0000  ebian 4.2.2-3)..
+0x08049787  4743 433a 2028 474e 5529 2034 2e32 2e33  GCC: (GNU) 4.2.3
+0x08049797  2032 3030 3731 3132 3320 2870 7265 7265   20071123 (prere
+0x080497a7  6c65 6173 6529 2028 4465 6269 616e 2034  lease) (Debian 4
+0x080497b7  2e32 2e32 2d34 2900 0047 4343 3a20 2847  .2.2-4)..GCC: (G
+0x080497c7  4e55 2920 342e 322e 3320 3230 3037 3131  NU) 4.2.3 200711
+0x080497d7  3233 2028 7072 6572 656c 6561 7365 2920  23 (prerelease)
+0x080497e7  2844 6562 6961 6e20 342e 322e 322d 3429  (Debian 4.2.2-4)
+0x080497f7  0000 4743 433a 2028 474e 5529 2034 2e32  ..GCC: (GNU) 4.2
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+0x08048473      ba01000000     mov edx, 1
+0x08048478      8d4c2414       lea ecx, [esp + local_14h]  ; 0x14
+; JMP XREF from 0x0804848d (main)
+0x0804847c      0fb682079704.  movzx eax, byte [edx + 0x8049707] ; [0x8049707:1]=8
+0x08048483      30440aff       xor byte [edx + ecx - 1], al
+0x08048487      83c201         add edx, 1
+0x0804848a      83fa09         cmp edx, 9
+0x0804848d      75ed           jne 0x804847c
+
+const unsigned char hardcoded[] = {0x08, 0x45, 0x36, 0xab, 0xc8, 0xcc,
+  0x11, 0xe3, 0x7a, 0x00};
+
+for (int i = 1; i < 10; ++i) {
+  input[i - 1] ^= hardcoded[i];
+}
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+0x0804848f      b900000000     mov ecx, 0
+0x08048494      b200           mov dl, 0
+0x08048496      8d5c2414       lea ebx, [esp + local_14h]  ; 0x14
+; JMP XREF from 0x080484a6 (main)
+  0x0804849a      0fbe041a       movsx eax, byte [edx + ebx]
+  0x0804849e      01c1           add ecx, eax
+  0x080484a0      83c201         add edx, 1
+  0x080484a3      83fa08         cmp edx, 8
+  0x080484a6      75f2           jne 0x804849a
+
+int j = 0; // $ecx
+for (int i = 0; i < 8; ++i) {
+  j += input[i];
+}
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+0x080484a8      0fbe54241c     movsx edx, byte [esp + local_1ch] ; [0x1c:1]=52
+0x080484ad      0fb6c1         movzx eax, cl
+0x080484b0      39c2           cmp edx, eax
+0x080484b2      751b           jne 0x80484cf
+0x080484b4      8d429f         lea eax, [edx - 0x61]
+0x080484b7      83f819         cmp eax, 0x19
+0x080484ba      7713           ja 0x80484cf
+0x080484bc      c70424d28504.  mov dword [esp], str.Good_key___n
+
+j &= 0xff;
+
+//local_1ch must be the 9th character
+//0x1c - 0x14 = 8
+if (j != input[8]) {
+  return bad_key;
+}
+
+if (0x19 > j - 0x61) {
+  return bad_key;
+}
+--------------------------------------------------------------------------------
+
+The first 8 characters are `xor`ed with a hardcoded string.
+
+We have a variable `j` which is the first 7 characters of the (`xor`ed) input string summed together.
+
+The 9th character of the input must be equal to `j` and `j - 0x61` must be smaller than `0x19`. In other words, `j` must be smaller than `0x7a`.
+
+The 10th character is ignored and is always the line feed character and ignored by the algorithm.
+
+--------------------------------------------------------------------------------
+
+We can zero out any of the input characters by using the corresponding hardcoded value because `n ^ n = 0`. However, the final check at the end requires the sum of the first 8 characters to be greater than `0x61`, otherwise the substraction would cause an overflow. However, this also much be less than `0x7a`.
+
